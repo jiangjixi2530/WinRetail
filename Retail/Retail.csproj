@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{483A33CB-F532-497F-B920-A0ED8B91FFFE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Retail</RootNamespace>
+    <AssemblyName>Retail</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Program Files %28x86%29\Win\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://localhost/Retail/</UpdateUrl>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>AF0AA8ACC8949B184A59EC3212AD90576E641916</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Retail_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMain.Designer.cs">
+      <DependentUpon>BaseMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\DelegateHelper.cs" />
+    <Compile Include="Class\FormHelper.cs" />
+    <Compile Include="Class\RetailEnum.cs" />
+    <Compile Include="Class\SysHelper.cs" />
+    <Compile Include="Controls\AlertMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\AlertMsg.Designer.cs">
+      <DependentUpon>AlertMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FrmLoading.Designer.cs">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FrmShade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FrmShade.Designer.cs">
+      <DependentUpon>FrmShade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PagePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UserComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WatermarkTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FinanceControls\PayMentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceControls\PayMentControl.Designer.cs">
+      <DependentUpon>PayMentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceControls\UnPayOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceControls\UnPayOrder.Designer.cs">
+      <DependentUpon>UnPayOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchase.Designer.cs">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductControls\FrmProductSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductControls\FrmProductSelect.Designer.cs">
+      <DependentUpon>FrmProductSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductControls\ProductItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductControls\ProductItem.Designer.cs">
+      <DependentUpon>ProductItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseControls\FrmPurchaseEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseControls\FrmPurchaseEdit.Designer.cs">
+      <DependentUpon>FrmPurchaseEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseControls\PurchaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchaseControls\PurchaseControl.Designer.cs">
+      <DependentUpon>PurchaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseControls\PurchaseOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchaseControls\PurchaseOrder.Designer.cs">
+      <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaseMain.resx">
+      <DependentUpon>BaseMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AlertMsg.resx">
+      <DependentUpon>AlertMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FrmLoading.resx">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FrmShade.resx">
+      <DependentUpon>FrmShade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceControls\PayMentControl.resx">
+      <DependentUpon>PayMentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceControls\UnPayOrder.resx">
+      <DependentUpon>UnPayOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchase.resx">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductControls\FrmProductSelect.resx">
+      <DependentUpon>FrmProductSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductControls\ProductItem.resx">
+      <DependentUpon>ProductItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PurchaseControls\FrmPurchaseEdit.resx">
+      <DependentUpon>FrmPurchaseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseControls\PurchaseControl.resx">
+      <DependentUpon>PurchaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseControls\PurchaseOrder.resx">
+      <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Main_minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseTool\BaseTool.csproj">
+      <Project>{5f5ba8aa-320b-456d-9969-bb7bf85ac7af}</Project>
+      <Name>BaseTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RetailDal\RetailDal.csproj">
+      <Project>{315d09ec-2103-45f6-927f-f2ffc3e8fe34}</Project>
+      <Name>RetailDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RetailModel\RetailModel.csproj">
+      <Project>{1d862166-8a9f-4d61-ab5f-69194fa06598}</Project>
+      <Name>RetailModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyShoppingCart_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_nor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table_btnkt_nor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table_btnkt_prs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_clear_nor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_clear_prs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table_btnzjdd_nor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table_btnzjdd_prs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic_Head.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic_Head.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Main_Navigation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Main_Refund.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\riqizuo_nor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\riqizuo_prs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuxing_selected_nor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuxing_selected_prs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\riqiyou_nor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\riqiyou_prs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_nor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Main_selectbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Main_Statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logo.ico" />
+    <None Include="Resources\OrderAdd.png" />
+    <None Include="Resources\radioUnCheck.png" />
+    <None Include="Resources\radioChecked.png" />
+    <None Include="Resources\goods_typeSelected.png" />
+    <None Include="Resources\btn_syy_nor.png" />
+    <None Include="Resources\btn_xyy_nor.png" />
+    <None Include="Resources\goods_nodiscount_nor.png" />
+    <None Include="Resources\goods_nodiscount_prs.png" />
+    <None Include="Resources\goods_selectedCount.png" />
+    <None Include="Resources\btn_fy_prs.png" />
+    <None Include="Resources\btn_fy_nor.png" />
+    <None Include="Resources\goods_search.png" />
+    <None Include="Resources\Table_qy_prs.png" />
+    <None Include="Resources\Loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client,KB2468871">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 和 x64%29与 .NET Framework 4 的更新%28KB2468871%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
