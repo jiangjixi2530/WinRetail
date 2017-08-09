@@ -38,7 +38,11 @@ namespace Retail.FinanceControls
             this.txtPurchaseStartDate.Text = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
             this.txtPurchaseEndDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
-
+        /// <summary>
+        /// 查询点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPurchaseQuery_Click(object sender, EventArgs e)
         {
             Thread threadQuery = new Thread(PurchaseDataQuery);
