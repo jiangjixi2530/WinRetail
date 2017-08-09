@@ -28,7 +28,11 @@ namespace Retail.FinanceControls
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// 窗体加载
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPayMent_Load(object sender, EventArgs e)
         {
             this.txtPurchaseStartDate.Text = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
