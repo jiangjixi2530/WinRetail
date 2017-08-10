@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BaseTool;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using Win.Soft.Retail.Model.RetailModel;
 using Win.Soft.Retail.RetailDal;
 using Win.Soft.Retail.RetailModel;
 
@@ -26,6 +28,10 @@ namespace Retail.FinanceControls
         /// 未结清采购单
         /// </summary>
         private List<UnPayOrder> listUnPayOrder = new List<UnPayOrder>();
+        /// <summary>
+        /// 单笔付款事件
+        /// </summary>
+        public SinglePayMentEvent SinglePayEvent { get; set; }
         public PayMentControl()
         {
             InitializeComponent();
@@ -39,6 +45,35 @@ namespace Retail.FinanceControls
         {
             this.txtPurchaseStartDate.Text = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
             this.txtPurchaseEndDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            this.PanelPurchaseUnPay.Dock = DockStyle.Fill;
+            this.PanelPurchaseUnPay.Visible = true;
+            this.panelPurchasePaid.Visible = false;
+            SinglePayEvent += SinglePayed;
+        }
+        /// <summary>
+        /// 单笔付款
+        /// </summary>
+        /// <param name="unPay"></param>
+        private void SinglePayed(UnPayOrder unPay)
+        {
+            PayMent payment = new PayMent();
+            payment.Code = "";
+            payment.PayDate = DateTime.Now;
+            payment.PayerID = Global.UserID;
+            payment.ManufacturerID = unPay.UnPayOrderInfo.ManufacturerID;
+            payment.PayableAmount = unPay.UnPayOrderInfo.UnPayAmount;
+            payment.PayAmount = payment.PayableAmount;
+            PayMentDetail paymentdetail = new PayMentDetail();
+
+        }
+        /// <summary>
+        /// 设置明细
+        /// </summary>
+        /// <param name="payMent"></param>
+        /// <param name="payMentDetail"></param>
+        private void SetDetail(PayMent payMent, List<PayMentDetail> listPayMentDetail)
+        {
+
         }
         /// <summary>
         /// 查询点击事件
@@ -191,5 +226,6 @@ namespace Retail.FinanceControls
                     break;
             }
         }
+
     }
 }

@@ -17,6 +17,13 @@ namespace Retail.FinanceControls
         /// </summary>
         private Purchase unPayOrderInfo;
         /// <summary>
+        /// 未结清采购单
+        /// </summary>
+        public Purchase UnPayOrderInfo
+        {
+            get { return unPayOrderInfo; }
+        }
+        /// <summary>
         /// 是否选中
         /// </summary>
         private bool isSelected = false;
@@ -81,6 +88,27 @@ namespace Retail.FinanceControls
         private void btnSelected_Click(object sender, EventArgs e)
         {
             IsSelected = !isSelected;
+        }
+        /// <summary>
+        /// 单笔付款
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.Parent.Parent.Parent.Parent is PayMentControl)
+                {
+                    PayMentControl payMent = (PayMentControl)this.Parent.Parent.Parent.Parent;
+                    if (payMent.SinglePayEvent != null)
+                        payMent.SinglePayEvent(this);
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 }

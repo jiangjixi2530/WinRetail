@@ -115,6 +115,7 @@
             this.btnPay.TabIndex = 124;
             this.btnPay.Text = "单笔付款";
             this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnSelected
             // 

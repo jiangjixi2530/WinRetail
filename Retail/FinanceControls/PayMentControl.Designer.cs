@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelPurchaseUnPay = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,64 +56,66 @@
             this.mcPurchaseEndDate = new System.Windows.Forms.MonthCalendar();
             this.mcPurchaseStartDate = new System.Windows.Forms.MonthCalendar();
             this.panelPayMentEdit = new System.Windows.Forms.Panel();
-            this.panelDataList = new System.Windows.Forms.Panel();
-            this.panelFunction = new System.Windows.Forms.Panel();
-            this.labPaied = new System.Windows.Forms.Label();
-            this.labUnPay = new System.Windows.Forms.Label();
+            this.DataGridDetail = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurchaseCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurchaseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.PanelDetailTitle = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labTitleProductName = new System.Windows.Forms.Label();
+            this.labTitleProductCode = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txtPayAmount = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtPayableAmount = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.cmbPayerID = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtPayDate = new System.Windows.Forms.TextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbManufacturerID = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.PanelDetailTitle = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.labTitleProductName = new System.Windows.Forms.Label();
-            this.labTitleProductCode = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnModify = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.panelDataList = new System.Windows.Forms.Panel();
+            this.panelPurchasePaid = new System.Windows.Forms.Panel();
+            this.panelFunction = new System.Windows.Forms.Panel();
+            this.labPaied = new System.Windows.Forms.Label();
+            this.labUnPay = new System.Windows.Forms.Label();
             this.PanelUnPayCenter = new Retail.Controls.PagePanel();
             this.txtCondition = new Retail.Controls.WatermarkTextBox();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurchaseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurchaseCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridDetail = new System.Windows.Forms.DataGridView();
-            this.panelPurchasePaid = new System.Windows.Forms.Panel();
             this.PanelPurchaseUnPay.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -126,24 +128,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.picStartTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPayMentEdit.SuspendLayout();
-            this.panelDataList.SuspendLayout();
-            this.panelFunction.SuspendLayout();
-            this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridDetail)).BeginInit();
+            this.panel11.SuspendLayout();
+            this.PanelDetailTitle.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.PanelDetailTitle.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridDetail)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel20.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelDataList.SuspendLayout();
+            this.panelFunction.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelPurchaseUnPay
@@ -464,416 +466,126 @@
             this.panelPayMentEdit.Controls.Add(this.panel21);
             this.panelPayMentEdit.Controls.Add(this.panel20);
             this.panelPayMentEdit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelPayMentEdit.Location = new System.Drawing.Point(494, 0);
+            this.panelPayMentEdit.Location = new System.Drawing.Point(309, 0);
             this.panelPayMentEdit.Name = "panelPayMentEdit";
-            this.panelPayMentEdit.Size = new System.Drawing.Size(475, 624);
+            this.panelPayMentEdit.Size = new System.Drawing.Size(660, 624);
             this.panelPayMentEdit.TabIndex = 1;
             this.panelPayMentEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
             // 
-            // panelDataList
-            // 
-            this.panelDataList.Controls.Add(this.panelPurchasePaid);
-            this.panelDataList.Controls.Add(this.PanelPurchaseUnPay);
-            this.panelDataList.Controls.Add(this.panelFunction);
-            this.panelDataList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelDataList.Location = new System.Drawing.Point(0, 0);
-            this.panelDataList.Name = "panelDataList";
-            this.panelDataList.Size = new System.Drawing.Size(460, 624);
-            this.panelDataList.TabIndex = 2;
-            this.panelDataList.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // panelFunction
-            // 
-            this.panelFunction.BackColor = System.Drawing.Color.Transparent;
-            this.panelFunction.Controls.Add(this.labPaied);
-            this.panelFunction.Controls.Add(this.labUnPay);
-            this.panelFunction.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFunction.Location = new System.Drawing.Point(0, 0);
-            this.panelFunction.Name = "panelFunction";
-            this.panelFunction.Size = new System.Drawing.Size(460, 50);
-            this.panelFunction.TabIndex = 0;
-            // 
-            // labPaied
-            // 
-            this.labPaied.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.labPaied.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.labPaied.Location = new System.Drawing.Point(140, 9);
-            this.labPaied.Name = "labPaied";
-            this.labPaied.Size = new System.Drawing.Size(140, 40);
-            this.labPaied.TabIndex = 3;
-            this.labPaied.Text = "已完成";
-            this.labPaied.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labPaied.Click += new System.EventHandler(this.labPaied_Click);
-            // 
-            // labUnPay
-            // 
-            this.labUnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(130)))), ((int)(((byte)(207)))));
-            this.labUnPay.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.labUnPay.ForeColor = System.Drawing.Color.White;
-            this.labUnPay.Location = new System.Drawing.Point(0, 9);
-            this.labUnPay.Name = "labUnPay";
-            this.labUnPay.Size = new System.Drawing.Size(140, 40);
-            this.labUnPay.TabIndex = 2;
-            this.labUnPay.Text = "进行中";
-            this.labUnPay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labUnPay.Click += new System.EventHandler(this.labUnPay_Click);
-            // 
-            // panel20
-            // 
-            this.panel20.BackColor = System.Drawing.Color.Transparent;
-            this.panel20.Controls.Add(this.panel2);
-            this.panel20.Controls.Add(this.label29);
-            this.panel20.Controls.Add(this.label2);
-            this.panel20.Controls.Add(this.pictureBox1);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(0, 0);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(475, 80);
-            this.panel20.TabIndex = 12;
-            this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFunction_Paint);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label29.Location = new System.Drawing.Point(22, 50);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(93, 20);
-            this.label29.TabIndex = 4;
-            this.label29.Text = "供应商名称：";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label2.Location = new System.Drawing.Point(22, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "供应商信息";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(130)))), ((int)(((byte)(207)))));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(7, 20);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.panel2.Location = new System.Drawing.Point(110, 45);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 30);
-            this.panel2.TabIndex = 115;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.textBox1.Location = new System.Drawing.Point(4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 19);
-            this.textBox1.TabIndex = 58;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.Transparent;
-            this.panel21.Controls.Add(this.panel9);
-            this.panel21.Controls.Add(this.label8);
-            this.panel21.Controls.Add(this.panel8);
-            this.panel21.Controls.Add(this.label7);
-            this.panel21.Controls.Add(this.panel7);
-            this.panel21.Controls.Add(this.label6);
-            this.panel21.Controls.Add(this.panel6);
-            this.panel21.Controls.Add(this.label5);
-            this.panel21.Controls.Add(this.panel5);
-            this.panel21.Controls.Add(this.panel3);
-            this.panel21.Controls.Add(this.label3);
-            this.panel21.Controls.Add(this.label32);
-            this.panel21.Controls.Add(this.pictureBox3);
-            this.panel21.Controls.Add(this.label4);
-            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 80);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(475, 154);
-            this.panel21.TabIndex = 13;
-            this.panel21.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFunction_Paint);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label32.Location = new System.Drawing.Point(21, 11);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(90, 21);
-            this.label32.TabIndex = 2;
-            this.label32.Text = "采购单信息";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(130)))), ((int)(((byte)(207)))));
-            this.pictureBox3.Location = new System.Drawing.Point(9, 13);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(7, 20);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.panel3.Location = new System.Drawing.Point(110, 40);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(120, 30);
-            this.panel3.TabIndex = 117;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.textBox2.Location = new System.Drawing.Point(4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 19);
-            this.textBox2.TabIndex = 58;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label3.Location = new System.Drawing.Point(36, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 20);
-            this.label3.TabIndex = 116;
-            this.label3.Text = "付款单号：";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.panel5.Location = new System.Drawing.Point(323, 80);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(120, 30);
-            this.panel5.TabIndex = 118;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.textBox3.Location = new System.Drawing.Point(4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(92, 19);
-            this.textBox3.TabIndex = 58;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::Retail.Properties.Resources.time_nor;
-            this.pictureBox4.Location = new System.Drawing.Point(99, 6);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(19, 18);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 48;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label4.Location = new System.Drawing.Point(248, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 20);
-            this.label4.TabIndex = 119;
-            this.label4.Text = "付款日期：";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.comboBox1);
-            this.panel6.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.panel6.Location = new System.Drawing.Point(322, 40);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(120, 30);
-            this.panel6.TabIndex = 121;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label5.Location = new System.Drawing.Point(248, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 20);
-            this.label5.TabIndex = 120;
-            this.label5.Text = "付款人员：";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(4, 1);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(112, 28);
-            this.comboBox1.TabIndex = 122;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.textBox4);
-            this.panel7.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.panel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.panel7.Location = new System.Drawing.Point(110, 80);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(120, 30);
-            this.panel7.TabIndex = 123;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.textBox4.Location = new System.Drawing.Point(4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(113, 19);
-            this.textBox4.TabIndex = 58;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label6.Location = new System.Drawing.Point(36, 84);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 20);
-            this.label6.TabIndex = 122;
-            this.label6.Text = "应付金额：";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.textBox5);
-            this.panel8.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.panel8.Location = new System.Drawing.Point(110, 120);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(120, 30);
-            this.panel8.TabIndex = 125;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.textBox5.Location = new System.Drawing.Point(4, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(113, 19);
-            this.textBox5.TabIndex = 58;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label7.Location = new System.Drawing.Point(36, 124);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 20);
-            this.label7.TabIndex = 124;
-            this.label7.Text = "实付金额：";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.textBox6);
-            this.panel9.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.panel9.Location = new System.Drawing.Point(322, 120);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(120, 30);
-            this.panel9.TabIndex = 127;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.textBox6.Location = new System.Drawing.Point(4, 5);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(113, 19);
-            this.textBox6.TabIndex = 58;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label8.Location = new System.Drawing.Point(276, 124);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 20);
-            this.label8.TabIndex = 126;
-            this.label8.Text = "备注：";
-            // 
-            // PanelDetailTitle
-            // 
-            this.PanelDetailTitle.BackColor = System.Drawing.Color.Transparent;
-            this.PanelDetailTitle.Controls.Add(this.panel13);
-            this.PanelDetailTitle.Controls.Add(this.panel10);
-            this.PanelDetailTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelDetailTitle.Location = new System.Drawing.Point(0, 234);
-            this.PanelDetailTitle.Name = "PanelDetailTitle";
-            this.PanelDetailTitle.Size = new System.Drawing.Size(475, 40);
-            this.PanelDetailTitle.TabIndex = 14;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.panel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(10, 40);
-            this.panel10.TabIndex = 115;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.btnModify);
-            this.panel11.Controls.Add(this.btnDelete);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(0, 578);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(475, 46);
-            this.panel11.TabIndex = 118;
+            // DataGridDetail
+            // 
+            this.DataGridDetail.AllowUserToAddRows = false;
+            this.DataGridDetail.AllowUserToDeleteRows = false;
+            this.DataGridDetail.AllowUserToResizeColumns = false;
+            this.DataGridDetail.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridDetail.BackgroundColor = System.Drawing.Color.White;
+            this.DataGridDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGridDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.DataGridDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DataGridDetail.ColumnHeadersVisible = false;
+            this.DataGridDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.colProductCode,
+            this.colProductName,
+            this.colPurchasePrice,
+            this.colPurchaseCount,
+            this.colPurchaseAmount,
+            this.Column6});
+            this.DataGridDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridDetail.Location = new System.Drawing.Point(10, 274);
+            this.DataGridDetail.MultiSelect = false;
+            this.DataGridDetail.Name = "DataGridDetail";
+            this.DataGridDetail.ReadOnly = true;
+            this.DataGridDetail.RowHeadersVisible = false;
+            this.DataGridDetail.RowHeadersWidth = 60;
+            this.DataGridDetail.RowTemplate.Height = 40;
+            this.DataGridDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridDetail.Size = new System.Drawing.Size(650, 304);
+            this.DataGridDetail.TabIndex = 120;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID";
+            this.Column1.HeaderText = "主键";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "PayMentID";
+            this.Column2.HeaderText = "主表主键";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PurchaseID";
+            this.Column3.HeaderText = "采购单ID";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // colProductCode
+            // 
+            this.colProductCode.DataPropertyName = "PurchaseCode";
+            this.colProductCode.HeaderText = "采购单号";
+            this.colProductCode.Name = "colProductCode";
+            this.colProductCode.ReadOnly = true;
+            // 
+            // colProductName
+            // 
+            this.colProductName.DataPropertyName = "PurchaseDate";
+            this.colProductName.HeaderText = "采购日期";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.ReadOnly = true;
+            this.colProductName.Width = 80;
+            // 
+            // colPurchasePrice
+            // 
+            this.colPurchasePrice.DataPropertyName = "PayableAmount";
+            this.colPurchasePrice.HeaderText = "应付金额";
+            this.colPurchasePrice.Name = "colPurchasePrice";
+            this.colPurchasePrice.ReadOnly = true;
+            this.colPurchasePrice.Width = 70;
+            // 
+            // colPurchaseCount
+            // 
+            this.colPurchaseCount.DataPropertyName = "PayAmount";
+            this.colPurchaseCount.HeaderText = "实付金额";
+            this.colPurchaseCount.Name = "colPurchaseCount";
+            this.colPurchaseCount.ReadOnly = true;
+            this.colPurchaseCount.Width = 70;
+            // 
+            // colPurchaseAmount
+            // 
+            this.colPurchaseAmount.DataPropertyName = "IsSettle";
+            this.colPurchaseAmount.HeaderText = "是否结清";
+            this.colPurchaseAmount.Name = "colPurchaseAmount";
+            this.colPurchaseAmount.ReadOnly = true;
+            this.colPurchaseAmount.Width = 70;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Remark";
+            this.Column6.HeaderText = "备注";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
             // 
             // panel12
             // 
@@ -886,92 +598,16 @@
             this.panel12.Size = new System.Drawing.Size(10, 304);
             this.panel12.TabIndex = 119;
             // 
-            // panel13
+            // panel11
             // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(234)))));
-            this.panel13.Controls.Add(this.label12);
-            this.panel13.Controls.Add(this.label11);
-            this.panel13.Controls.Add(this.label10);
-            this.panel13.Controls.Add(this.label9);
-            this.panel13.Controls.Add(this.labTitleProductName);
-            this.panel13.Controls.Add(this.labTitleProductCode);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(10, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(465, 40);
-            this.panel13.TabIndex = 116;
-            // 
-            // labTitleProductName
-            // 
-            this.labTitleProductName.BackColor = System.Drawing.Color.Transparent;
-            this.labTitleProductName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labTitleProductName.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labTitleProductName.Location = new System.Drawing.Point(100, 0);
-            this.labTitleProductName.Name = "labTitleProductName";
-            this.labTitleProductName.Size = new System.Drawing.Size(80, 40);
-            this.labTitleProductName.TabIndex = 6;
-            this.labTitleProductName.Text = "采购日期";
-            this.labTitleProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labTitleProductCode
-            // 
-            this.labTitleProductCode.BackColor = System.Drawing.Color.Transparent;
-            this.labTitleProductCode.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labTitleProductCode.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labTitleProductCode.Location = new System.Drawing.Point(0, 0);
-            this.labTitleProductCode.Name = "labTitleProductCode";
-            this.labTitleProductCode.Size = new System.Drawing.Size(100, 40);
-            this.labTitleProductCode.TabIndex = 3;
-            this.labTitleProductCode.Text = "采购单号";
-            this.labTitleProductCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label9.Location = new System.Drawing.Point(180, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 40);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "应付金额";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label10.Location = new System.Drawing.Point(250, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 40);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "实付金额";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label11.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label11.Location = new System.Drawing.Point(320, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 40);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "是否结清";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label12.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label12.Location = new System.Drawing.Point(390, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 40);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "备注";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel11.BackColor = System.Drawing.Color.Transparent;
+            this.panel11.Controls.Add(this.btnModify);
+            this.panel11.Controls.Add(this.btnDelete);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel11.Location = new System.Drawing.Point(0, 578);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(660, 46);
+            this.panel11.TabIndex = 118;
             // 
             // btnModify
             // 
@@ -1009,6 +645,520 @@
             this.btnDelete.Text = "打印";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
+            // PanelDetailTitle
+            // 
+            this.PanelDetailTitle.BackColor = System.Drawing.Color.Transparent;
+            this.PanelDetailTitle.Controls.Add(this.panel13);
+            this.PanelDetailTitle.Controls.Add(this.panel10);
+            this.PanelDetailTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelDetailTitle.Location = new System.Drawing.Point(0, 234);
+            this.PanelDetailTitle.Name = "PanelDetailTitle";
+            this.PanelDetailTitle.Size = new System.Drawing.Size(660, 40);
+            this.PanelDetailTitle.TabIndex = 14;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(234)))));
+            this.panel13.Controls.Add(this.label14);
+            this.panel13.Controls.Add(this.label13);
+            this.panel13.Controls.Add(this.label12);
+            this.panel13.Controls.Add(this.label11);
+            this.panel13.Controls.Add(this.label10);
+            this.panel13.Controls.Add(this.label9);
+            this.panel13.Controls.Add(this.labTitleProductName);
+            this.panel13.Controls.Add(this.labTitleProductCode);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(10, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(650, 40);
+            this.panel13.TabIndex = 116;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label14.Location = new System.Drawing.Point(510, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(140, 40);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "备注";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label13.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label13.Location = new System.Drawing.Point(440, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 40);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "是否结清";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label12.Location = new System.Drawing.Point(370, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(70, 40);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "实付金额";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label11.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label11.Location = new System.Drawing.Point(300, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 40);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "应付金额";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label10.Location = new System.Drawing.Point(230, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 40);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "已付金额";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label9.Location = new System.Drawing.Point(160, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 40);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "采购金额";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labTitleProductName
+            // 
+            this.labTitleProductName.BackColor = System.Drawing.Color.Transparent;
+            this.labTitleProductName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labTitleProductName.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labTitleProductName.Location = new System.Drawing.Point(80, 0);
+            this.labTitleProductName.Name = "labTitleProductName";
+            this.labTitleProductName.Size = new System.Drawing.Size(80, 40);
+            this.labTitleProductName.TabIndex = 6;
+            this.labTitleProductName.Text = "采购日期";
+            this.labTitleProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labTitleProductCode
+            // 
+            this.labTitleProductCode.BackColor = System.Drawing.Color.Transparent;
+            this.labTitleProductCode.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labTitleProductCode.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labTitleProductCode.Location = new System.Drawing.Point(0, 0);
+            this.labTitleProductCode.Name = "labTitleProductCode";
+            this.labTitleProductCode.Size = new System.Drawing.Size(80, 40);
+            this.labTitleProductCode.TabIndex = 3;
+            this.labTitleProductCode.Text = "采购单号";
+            this.labTitleProductCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.panel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(10, 40);
+            this.panel10.TabIndex = 115;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Transparent;
+            this.panel21.Controls.Add(this.panel9);
+            this.panel21.Controls.Add(this.label8);
+            this.panel21.Controls.Add(this.panel8);
+            this.panel21.Controls.Add(this.label7);
+            this.panel21.Controls.Add(this.panel7);
+            this.panel21.Controls.Add(this.label6);
+            this.panel21.Controls.Add(this.panel6);
+            this.panel21.Controls.Add(this.label5);
+            this.panel21.Controls.Add(this.panel5);
+            this.panel21.Controls.Add(this.panel3);
+            this.panel21.Controls.Add(this.label3);
+            this.panel21.Controls.Add(this.label32);
+            this.panel21.Controls.Add(this.pictureBox3);
+            this.panel21.Controls.Add(this.label4);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(0, 80);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(660, 154);
+            this.panel21.TabIndex = 13;
+            this.panel21.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFunction_Paint);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.txtRemark);
+            this.panel9.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.panel9.Location = new System.Drawing.Point(322, 120);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(120, 30);
+            this.panel9.TabIndex = 127;
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.BackColor = System.Drawing.Color.White;
+            this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRemark.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.txtRemark.Location = new System.Drawing.Point(4, 5);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(113, 19);
+            this.txtRemark.TabIndex = 58;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label8.Location = new System.Drawing.Point(276, 124);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 20);
+            this.label8.TabIndex = 126;
+            this.label8.Text = "备注：";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.txtPayAmount);
+            this.panel8.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.panel8.Location = new System.Drawing.Point(110, 120);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(120, 30);
+            this.panel8.TabIndex = 125;
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
+            // 
+            // txtPayAmount
+            // 
+            this.txtPayAmount.BackColor = System.Drawing.Color.White;
+            this.txtPayAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPayAmount.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.txtPayAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.txtPayAmount.Location = new System.Drawing.Point(4, 5);
+            this.txtPayAmount.Name = "txtPayAmount";
+            this.txtPayAmount.Size = new System.Drawing.Size(113, 19);
+            this.txtPayAmount.TabIndex = 58;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label7.Location = new System.Drawing.Point(36, 124);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 20);
+            this.label7.TabIndex = 124;
+            this.label7.Text = "实付金额：";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.txtPayableAmount);
+            this.panel7.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.panel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.panel7.Location = new System.Drawing.Point(110, 80);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(120, 30);
+            this.panel7.TabIndex = 123;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
+            // 
+            // txtPayableAmount
+            // 
+            this.txtPayableAmount.BackColor = System.Drawing.Color.White;
+            this.txtPayableAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPayableAmount.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.txtPayableAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.txtPayableAmount.Location = new System.Drawing.Point(4, 5);
+            this.txtPayableAmount.Name = "txtPayableAmount";
+            this.txtPayableAmount.Size = new System.Drawing.Size(113, 19);
+            this.txtPayableAmount.TabIndex = 58;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label6.Location = new System.Drawing.Point(36, 84);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 20);
+            this.label6.TabIndex = 122;
+            this.label6.Text = "应付金额：";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.cmbPayerID);
+            this.panel6.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.panel6.Location = new System.Drawing.Point(322, 40);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(120, 30);
+            this.panel6.TabIndex = 121;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
+            // 
+            // cmbPayerID
+            // 
+            this.cmbPayerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbPayerID.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cmbPayerID.FormattingEnabled = true;
+            this.cmbPayerID.Location = new System.Drawing.Point(4, 1);
+            this.cmbPayerID.Name = "cmbPayerID";
+            this.cmbPayerID.Size = new System.Drawing.Size(114, 28);
+            this.cmbPayerID.TabIndex = 122;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label5.Location = new System.Drawing.Point(248, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 20);
+            this.label5.TabIndex = 120;
+            this.label5.Text = "付款人员：";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.txtPayDate);
+            this.panel5.Controls.Add(this.pictureBox4);
+            this.panel5.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.panel5.Location = new System.Drawing.Point(323, 80);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(120, 30);
+            this.panel5.TabIndex = 118;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
+            // 
+            // txtPayDate
+            // 
+            this.txtPayDate.BackColor = System.Drawing.Color.White;
+            this.txtPayDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPayDate.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.txtPayDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.txtPayDate.Location = new System.Drawing.Point(4, 5);
+            this.txtPayDate.Name = "txtPayDate";
+            this.txtPayDate.Size = new System.Drawing.Size(92, 19);
+            this.txtPayDate.TabIndex = 58;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::Retail.Properties.Resources.time_nor;
+            this.pictureBox4.Location = new System.Drawing.Point(99, 6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(19, 18);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.TabIndex = 48;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txtCode);
+            this.panel3.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.panel3.Location = new System.Drawing.Point(110, 40);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(120, 30);
+            this.panel3.TabIndex = 117;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
+            // 
+            // txtCode
+            // 
+            this.txtCode.BackColor = System.Drawing.Color.White;
+            this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.txtCode.Location = new System.Drawing.Point(4, 5);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(113, 19);
+            this.txtCode.TabIndex = 58;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label3.Location = new System.Drawing.Point(36, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 20);
+            this.label3.TabIndex = 116;
+            this.label3.Text = "付款单号：";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label32.Location = new System.Drawing.Point(21, 11);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(90, 21);
+            this.label32.TabIndex = 2;
+            this.label32.Text = "采购单信息";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(130)))), ((int)(((byte)(207)))));
+            this.pictureBox3.Location = new System.Drawing.Point(9, 13);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(7, 20);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label4.Location = new System.Drawing.Point(248, 85);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.TabIndex = 119;
+            this.label4.Text = "付款日期：";
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.Transparent;
+            this.panel20.Controls.Add(this.panel2);
+            this.panel20.Controls.Add(this.label29);
+            this.panel20.Controls.Add(this.label2);
+            this.panel20.Controls.Add(this.pictureBox1);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(0, 0);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(660, 80);
+            this.panel20.TabIndex = 12;
+            this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFunction_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.cmbManufacturerID);
+            this.panel2.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.panel2.Location = new System.Drawing.Point(110, 45);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(120, 30);
+            this.panel2.TabIndex = 122;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
+            // 
+            // cmbManufacturerID
+            // 
+            this.cmbManufacturerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbManufacturerID.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cmbManufacturerID.FormattingEnabled = true;
+            this.cmbManufacturerID.Location = new System.Drawing.Point(4, 1);
+            this.cmbManufacturerID.Name = "cmbManufacturerID";
+            this.cmbManufacturerID.Size = new System.Drawing.Size(114, 28);
+            this.cmbManufacturerID.TabIndex = 122;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label29.Location = new System.Drawing.Point(22, 50);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(93, 20);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "供应商名称：";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Location = new System.Drawing.Point(22, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 21);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "供应商信息";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(130)))), ((int)(((byte)(207)))));
+            this.pictureBox1.Location = new System.Drawing.Point(10, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(7, 20);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panelDataList
+            // 
+            this.panelDataList.Controls.Add(this.panelPurchasePaid);
+            this.panelDataList.Controls.Add(this.PanelPurchaseUnPay);
+            this.panelDataList.Controls.Add(this.panelFunction);
+            this.panelDataList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelDataList.Location = new System.Drawing.Point(0, 0);
+            this.panelDataList.Name = "panelDataList";
+            this.panelDataList.Size = new System.Drawing.Size(246, 624);
+            this.panelDataList.TabIndex = 2;
+            this.panelDataList.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
+            // 
+            // panelPurchasePaid
+            // 
+            this.panelPurchasePaid.Location = new System.Drawing.Point(10, 169);
+            this.panelPurchasePaid.Name = "panelPurchasePaid";
+            this.panelPurchasePaid.Size = new System.Drawing.Size(200, 100);
+            this.panelPurchasePaid.TabIndex = 1;
+            // 
+            // panelFunction
+            // 
+            this.panelFunction.BackColor = System.Drawing.Color.Transparent;
+            this.panelFunction.Controls.Add(this.labPaied);
+            this.panelFunction.Controls.Add(this.labUnPay);
+            this.panelFunction.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFunction.Location = new System.Drawing.Point(0, 0);
+            this.panelFunction.Name = "panelFunction";
+            this.panelFunction.Size = new System.Drawing.Size(246, 50);
+            this.panelFunction.TabIndex = 0;
+            // 
+            // labPaied
+            // 
+            this.labPaied.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.labPaied.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.labPaied.Location = new System.Drawing.Point(140, 9);
+            this.labPaied.Name = "labPaied";
+            this.labPaied.Size = new System.Drawing.Size(140, 40);
+            this.labPaied.TabIndex = 3;
+            this.labPaied.Text = "已完成";
+            this.labPaied.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labPaied.Click += new System.EventHandler(this.labPaied_Click);
+            // 
+            // labUnPay
+            // 
+            this.labUnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(130)))), ((int)(((byte)(207)))));
+            this.labUnPay.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.labUnPay.ForeColor = System.Drawing.Color.White;
+            this.labUnPay.Location = new System.Drawing.Point(0, 9);
+            this.labUnPay.Name = "labUnPay";
+            this.labUnPay.Size = new System.Drawing.Size(140, 40);
+            this.labUnPay.TabIndex = 2;
+            this.labUnPay.Text = "进行中";
+            this.labUnPay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labUnPay.Click += new System.EventHandler(this.labUnPay_Click);
+            // 
             // PanelUnPayCenter
             // 
             this.PanelUnPayCenter.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1031,128 +1181,6 @@
             this.txtCondition.Size = new System.Drawing.Size(170, 19);
             this.txtCondition.TabIndex = 115;
             this.txtCondition.WaterMark = "订单号/供应商";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Remark";
-            this.Column6.HeaderText = "备注";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // colPurchaseAmount
-            // 
-            this.colPurchaseAmount.DataPropertyName = "IsSettle";
-            this.colPurchaseAmount.HeaderText = "是否结清";
-            this.colPurchaseAmount.Name = "colPurchaseAmount";
-            this.colPurchaseAmount.ReadOnly = true;
-            this.colPurchaseAmount.Width = 70;
-            // 
-            // colPurchaseCount
-            // 
-            this.colPurchaseCount.DataPropertyName = "PayAmount";
-            this.colPurchaseCount.HeaderText = "实付金额";
-            this.colPurchaseCount.Name = "colPurchaseCount";
-            this.colPurchaseCount.ReadOnly = true;
-            this.colPurchaseCount.Width = 70;
-            // 
-            // colPurchasePrice
-            // 
-            this.colPurchasePrice.DataPropertyName = "PayableAmount";
-            this.colPurchasePrice.HeaderText = "应付金额";
-            this.colPurchasePrice.Name = "colPurchasePrice";
-            this.colPurchasePrice.ReadOnly = true;
-            this.colPurchasePrice.Width = 70;
-            // 
-            // colProductName
-            // 
-            this.colProductName.DataPropertyName = "PurchaseDate";
-            this.colProductName.HeaderText = "采购日期";
-            this.colProductName.Name = "colProductName";
-            this.colProductName.ReadOnly = true;
-            this.colProductName.Width = 80;
-            // 
-            // colProductCode
-            // 
-            this.colProductCode.DataPropertyName = "PurchaseCode";
-            this.colProductCode.HeaderText = "采购单号";
-            this.colProductCode.Name = "colProductCode";
-            this.colProductCode.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "PurchaseID";
-            this.Column3.HeaderText = "采购单ID";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "PayMentID";
-            this.Column2.HeaderText = "主表主键";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "主键";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // DataGridDetail
-            // 
-            this.DataGridDetail.AllowUserToAddRows = false;
-            this.DataGridDetail.AllowUserToDeleteRows = false;
-            this.DataGridDetail.AllowUserToResizeColumns = false;
-            this.DataGridDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
-            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.DataGridDetail.BackgroundColor = System.Drawing.Color.White;
-            this.DataGridDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataGridDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.DataGridDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DataGridDetail.ColumnHeadersVisible = false;
-            this.DataGridDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.colProductCode,
-            this.colProductName,
-            this.colPurchasePrice,
-            this.colPurchaseCount,
-            this.colPurchaseAmount,
-            this.Column6});
-            this.DataGridDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DataGridDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridDetail.Location = new System.Drawing.Point(10, 274);
-            this.DataGridDetail.MultiSelect = false;
-            this.DataGridDetail.Name = "DataGridDetail";
-            this.DataGridDetail.ReadOnly = true;
-            this.DataGridDetail.RowHeadersVisible = false;
-            this.DataGridDetail.RowHeadersWidth = 60;
-            this.DataGridDetail.RowTemplate.Height = 40;
-            this.DataGridDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridDetail.Size = new System.Drawing.Size(465, 304);
-            this.DataGridDetail.TabIndex = 120;
-            // 
-            // panelPurchasePaid
-            // 
-            this.panelPurchasePaid.Location = new System.Drawing.Point(10, 169);
-            this.panelPurchasePaid.Name = "panelPurchasePaid";
-            this.panelPurchasePaid.Size = new System.Drawing.Size(200, 100);
-            this.panelPurchasePaid.TabIndex = 1;
             // 
             // PayMentControl
             // 
@@ -1184,32 +1212,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.picStartTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelPayMentEdit.ResumeLayout(false);
-            this.panelDataList.ResumeLayout(false);
-            this.panelFunction.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridDetail)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.PanelDetailTitle.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.PanelDetailTitle.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridDetail)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelDataList.ResumeLayout(false);
+            this.panelFunction.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1252,29 +1279,27 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPayDate;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPayerID;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPayableAmount;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPayAmount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtRemark;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel PanelDetailTitle;
         private System.Windows.Forms.Panel panel10;
@@ -1300,5 +1325,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Panel panelPurchasePaid;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cmbManufacturerID;
     }
 }
