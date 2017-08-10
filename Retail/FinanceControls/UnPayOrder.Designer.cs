@@ -113,7 +113,7 @@
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(75, 30);
             this.btnPay.TabIndex = 124;
-            this.btnPay.Text = "付款";
+            this.btnPay.Text = "单笔付款";
             this.btnPay.UseVisualStyleBackColor = true;
             // 
             // btnSelected

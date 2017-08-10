@@ -14,7 +14,6 @@ namespace Retail.FinanceControls
 {
     public partial class PayMentControl : UserControl
     {
-
         /// <summary>
         /// 未结清的采购单信息
         /// </summary>
@@ -23,6 +22,9 @@ namespace Retail.FinanceControls
         /// 采购单业务类
         /// </summary>
         private PurchaseDal purchaseDal = new PurchaseDal();
+        /// <summary>
+        /// 未结清采购单
+        /// </summary>
         private List<UnPayOrder> listUnPayOrder = new List<UnPayOrder>();
         public PayMentControl()
         {
@@ -168,7 +170,7 @@ namespace Retail.FinanceControls
         private void PayMentControl_SizeChanged(object sender, EventArgs e)
         {
             panelDataList.Width = this.Width / 2 - 5;
-            panelPurchasePaid.Width = panelDataList.Width;
+            panelPayMentEdit.Width = panelDataList.Width;
         }
         /// <summary>
         /// 日期选择事件
