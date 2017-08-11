@@ -19,58 +19,18 @@ namespace Retail.Class
         public static void FormCircular(object sender, PaintEventArgs e)
         {
             Form form = ((Form)sender);
-            List<Point> list = new List<Point>();
-            int width = form.Width;
-            int height = form.Height;
-
-            //左上
-            list.Add(new Point(0, 5));
-            list.Add(new Point(1, 5));
-            list.Add(new Point(1, 3));
-            list.Add(new Point(2, 3));
-            list.Add(new Point(2, 2));
-            list.Add(new Point(3, 2));
-            list.Add(new Point(3, 1));
-            list.Add(new Point(5, 1));
-            list.Add(new Point(5, 0));
-            //右上
-            list.Add(new Point(width - 5, 0));
-            list.Add(new Point(width - 5, 1));
-            list.Add(new Point(width - 3, 1));
-            list.Add(new Point(width - 3, 2));
-            list.Add(new Point(width - 2, 2));
-            list.Add(new Point(width - 2, 3));
-            list.Add(new Point(width - 1, 3));
-            list.Add(new Point(width - 1, 5));
-            list.Add(new Point(width - 0, 5));
-            //右下
-            list.Add(new Point(width - 0, height - 5));
-            list.Add(new Point(width - 1, height - 5));
-            list.Add(new Point(width - 1, height - 3));
-            list.Add(new Point(width - 2, height - 3));
-            list.Add(new Point(width - 2, height - 2));
-            list.Add(new Point(width - 3, height - 2));
-            list.Add(new Point(width - 3, height - 1));
-            list.Add(new Point(width - 5, height - 1));
-            list.Add(new Point(width - 5, height - 0));
-            //左下
-            list.Add(new Point(5, height - 0));
-            list.Add(new Point(5, height - 1));
-            list.Add(new Point(3, height - 1));
-            list.Add(new Point(3, height - 2));
-            list.Add(new Point(2, height - 2));
-            list.Add(new Point(2, height - 3));
-            list.Add(new Point(1, height - 3));
-            list.Add(new Point(1, height - 5));
-            list.Add(new Point(0, height - 5));
-
-            Point[] points = list.ToArray();
-
-            GraphicsPath shape = new GraphicsPath();
-            shape.AddPolygon(points);
-
-            //将窗体的显示区域设为GraphicsPath的实例 
-            form.Region = new System.Drawing.Region(shape);
+            GraphicsPath oPath = new GraphicsPath();
+            int x = 0;
+            int y = 0;
+            int w = form.Width;
+            int h = form.Height;
+            Graphics g = form.CreateGraphics();
+            oPath.AddArc(0, 0, 18, 18, 180, 90);  //左上角
+            oPath.AddArc(w - 18, 0, 18, 18, 270, 90);//右上角
+            oPath.AddArc(w - 25, h - 25 , 25 , 25 , 0, 90); //右下角
+            oPath.AddArc(0, h - 18, 18, 18, 90, 90);//左下角
+            oPath.CloseAllFigures();
+            form.Region = new Region(oPath);   
         }
     }
 }

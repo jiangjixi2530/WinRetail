@@ -363,7 +363,7 @@
             this.PanelProductDetail.ListPageControls = null;
             this.PanelProductDetail.Location = new System.Drawing.Point(0, 0);
             this.PanelProductDetail.Name = "PanelProductDetail";
-            this.PanelProductDetail.PageMethod = Retail.Class.PageMethodEnum.Normal;
+            this.PanelProductDetail.PageMethod = BaseTool.PageMethodEnum.Normal;
             this.PanelProductDetail.Size = new System.Drawing.Size(787, 442);
             this.PanelProductDetail.SpaceLeftAndRight = 10;
             this.PanelProductDetail.SpaceUpAndLower = 10;

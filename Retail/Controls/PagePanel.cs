@@ -1,4 +1,5 @@
-﻿using Retail.Class;
+﻿using BaseTool;
+using Retail.Class;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

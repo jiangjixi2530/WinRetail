@@ -64,7 +64,13 @@ namespace Retail.FinanceControls
             payment.PayableAmount = unPay.UnPayOrderInfo.UnPayAmount;
             payment.PayAmount = payment.PayableAmount;
             PayMentDetail paymentdetail = new PayMentDetail();
-
+            paymentdetail.PurchaseID = unPay.UnPayOrderInfo.ID;
+            paymentdetail.PaidAmount = unPay.UnPayOrderInfo.PurchaseAmount - unPay.UnPayOrderInfo.UnPayAmount;
+            paymentdetail.PayableAmount =  unPay.UnPayOrderInfo.UnPayAmount;
+            paymentdetail.PayAmount = unPay.UnPayOrderInfo.UnPayAmount;
+            paymentdetail.IsSettle = false;
+            List<PayMentDetail> listPayMentDetail = new List<PayMentDetail>();
+            listPayMentDetail.Add(paymentdetail);
         }
         /// <summary>
         /// 设置明细
@@ -73,7 +79,8 @@ namespace Retail.FinanceControls
         /// <param name="payMentDetail"></param>
         private void SetDetail(PayMent payMent, List<PayMentDetail> listPayMentDetail)
         {
-
+            this.cmbManufacturerID.SelectedValue = payMent.ManufacturerID;
+            this.txtCode.Text = "";
         }
         /// <summary>
         /// 查询点击事件

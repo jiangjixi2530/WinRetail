@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Retail.Class
+namespace BaseTool
 {
     /// <summary>
     /// 订单类型
@@ -36,5 +36,19 @@ namespace Retail.Class
         /// 每次分页需要遍历，计算速度和加载速度有一定迟缓
         /// </summary>
         Single,
+    }
+    /// <summary>
+    /// 编号自动生成的单据类型
+    /// </summary>
+    public enum AutoCodeType
+    {
+        /// <summary>
+        /// 采购单
+        /// </summary>
+        Purchase,
+        /// <summary>
+        /// 付款单号
+        /// </summary>
+        PayMent,
     }
 }

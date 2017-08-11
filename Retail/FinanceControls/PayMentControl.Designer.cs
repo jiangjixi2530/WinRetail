@@ -611,16 +611,16 @@
             // 
             // btnModify
             // 
+            this.btnModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModify.BackColor = System.Drawing.Color.Transparent;
             this.btnModify.BackgroundImage = global::Retail.Properties.Resources.Pic_btnSelect_nor;
             this.btnModify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModify.Enabled = false;
             this.btnModify.FlatAppearance.BorderSize = 0;
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnModify.ForeColor = System.Drawing.Color.White;
-            this.btnModify.Location = new System.Drawing.Point(388, 10);
+            this.btnModify.Location = new System.Drawing.Point(576, 6);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(70, 30);
             this.btnModify.TabIndex = 4;
@@ -629,16 +629,16 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.BackgroundImage = global::Retail.Properties.Resources.Pic_btnSelect_prs;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Enabled = false;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(298, 10);
+            this.btnDelete.Location = new System.Drawing.Point(486, 6);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 30);
             this.btnDelete.TabIndex = 3;
@@ -1165,7 +1165,7 @@
             this.PanelUnPayCenter.ListPageControls = null;
             this.PanelUnPayCenter.Location = new System.Drawing.Point(0, 84);
             this.PanelUnPayCenter.Name = "PanelUnPayCenter";
-            this.PanelUnPayCenter.PageMethod = Retail.Class.PageMethodEnum.Normal;
+            this.PanelUnPayCenter.PageMethod = BaseTool.PageMethodEnum.Normal;
             this.PanelUnPayCenter.Size = new System.Drawing.Size(485, 444);
             this.PanelUnPayCenter.SpaceLeftAndRight = 1;
             this.PanelUnPayCenter.SpaceUpAndLower = 1;

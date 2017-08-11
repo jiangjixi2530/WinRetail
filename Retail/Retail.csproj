@@ -93,7 +93,6 @@
     </Compile>
     <Compile Include="Class\DelegateHelper.cs" />
     <Compile Include="Class\FormHelper.cs" />
-    <Compile Include="Class\RetailEnum.cs" />
     <Compile Include="Class\SysHelper.cs" />
     <Compile Include="Controls\AlertMsg.cs">
       <SubType>Form</SubType>

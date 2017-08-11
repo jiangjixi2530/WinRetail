@@ -38,5 +38,14 @@ namespace Retail
             FrmLoading load = new FrmLoading();
             ((BaseMain)Global.MainForm).ShadeShowDialog(load);
         }
+        /// <summary>
+        /// 自动生成编码
+        /// </summary>
+        /// <param name="codeType"></param>
+        /// <returns></returns>
+        public static string SysAutoCode(AutoCodeType codeType)
+        {
+            return string.Empty;
+        }
     }
 }
