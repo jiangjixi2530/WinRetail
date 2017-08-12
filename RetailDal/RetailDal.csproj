@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchase\PurchaseDal.cs" />
     <Compile Include="Purchase\PurchaseDetailDal.cs" />
+    <Compile Include="Sys\SysAutoCodeDal.cs" />
     <Compile Include="Sys\SysUserDal.cs" />
   </ItemGroup>
   <ItemGroup>

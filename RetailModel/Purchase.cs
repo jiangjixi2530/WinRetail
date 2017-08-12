@@ -10,7 +10,6 @@ namespace Win.Soft.Retail.RetailModel
         public Purchase()
         {
             _purchasedate = DateTime.Now;
-            _code = "PU" + DateTime.Now.ToString("yyyy-MM-dd") + "001";
         }
         #region Model
         private int _id;

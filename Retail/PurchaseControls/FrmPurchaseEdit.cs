@@ -53,7 +53,7 @@ namespace Retail.PurchaseControls
             this.cmbManufacturerID.SelectedValue = CurrentOrder.ManufacturerID;
             this.txtTelephone.Text = CurrentOrder.Telephone;
             this.txtRelation.Text = CurrentOrder.Relation;
-            this.txtCode.Text = CurrentOrder.Code;
+            this.txtCode.Text = CurrentOrder.Code == null ? SysHelper.GetAutoCode(AutoCodeType.Purchase) : CurrentOrder.Code;
             this.txtPurchaseDate.Text = CurrentOrder.PurchaseDate.ToString("yyyy-MM-dd");
             this.txtReceiver.Text = CurrentOrder.Receiver;
             this.txtReceiverPhone.Text = CurrentOrder.ReceiverPhone;

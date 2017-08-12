@@ -50,9 +50,10 @@
             this.labCurrentPage = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.picSearch = new System.Windows.Forms.PictureBox();
+            this.txtCondition = new Retail.Controls.WatermarkTextBox();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.PanelProductDetail = new Retail.Controls.PagePanel();
-            this.txtCondition = new Retail.Controls.WatermarkTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.PanelLeft.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -199,6 +200,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.labOrderInfo);
@@ -215,7 +217,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("宋体", 8F);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label15.Location = new System.Drawing.Point(516, 20);
+            this.label15.Location = new System.Drawing.Point(441, 20);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(183, 11);
             this.label15.TabIndex = 121;
@@ -348,6 +350,17 @@
             this.picSearch.TabStop = false;
             this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
             // 
+            // txtCondition
+            // 
+            this.txtCondition.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCondition.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.txtCondition.Location = new System.Drawing.Point(1, 6);
+            this.txtCondition.Name = "txtCondition";
+            this.txtCondition.Size = new System.Drawing.Size(170, 19);
+            this.txtCondition.TabIndex = 115;
+            this.txtCondition.WaterMark = "产品编号/产品名称";
+            this.txtCondition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCondition_KeyPress);
+            // 
             // PanelCenter
             // 
             this.PanelCenter.Controls.Add(this.PanelProductDetail);
@@ -369,16 +382,23 @@
             this.PanelProductDetail.SpaceUpAndLower = 10;
             this.PanelProductDetail.TabIndex = 0;
             // 
-            // txtCondition
+            // button1
             // 
-            this.txtCondition.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCondition.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.txtCondition.Location = new System.Drawing.Point(1, 6);
-            this.txtCondition.Name = "txtCondition";
-            this.txtCondition.Size = new System.Drawing.Size(170, 19);
-            this.txtCondition.TabIndex = 115;
-            this.txtCondition.WaterMark = "产品编号/产品名称";
-            this.txtCondition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCondition_KeyPress);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = global::Retail.Properties.Resources.Pic_BtnCancel_nor;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.button1.Location = new System.Drawing.Point(628, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 30);
+            this.button1.TabIndex = 193;
+            this.button1.Text = "取消";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmProductSelect
             // 
@@ -442,5 +462,6 @@
         private System.Windows.Forms.Panel PanelCategoryCenter;
         private Controls.PagePanel PanelProductDetail;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button1;
     }
 }

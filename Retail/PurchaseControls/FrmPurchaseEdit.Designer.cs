@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelHead = new System.Windows.Forms.Panel();
             this.btnProductSelect = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -67,6 +67,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -89,7 +90,6 @@
             this.labTitlePurchasePrice = new System.Windows.Forms.Label();
             this.labTitleProductName = new System.Windows.Forms.Label();
             this.labTitleProductCode = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.PanelHead.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -201,6 +201,7 @@
             // 
             // txtPurchaseAmount
             // 
+            this.txtPurchaseAmount.BackColor = System.Drawing.Color.White;
             this.txtPurchaseAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPurchaseAmount.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.txtPurchaseAmount.Location = new System.Drawing.Point(6, 4);
@@ -231,6 +232,7 @@
             // 
             // txtPurchaseCount
             // 
+            this.txtPurchaseCount.BackColor = System.Drawing.Color.White;
             this.txtPurchaseCount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPurchaseCount.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             this.txtPurchaseCount.Location = new System.Drawing.Point(6, 4);
@@ -364,11 +366,13 @@
             // 
             // txtCode
             // 
+            this.txtCode.BackColor = System.Drawing.Color.White;
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCode.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.txtCode.Location = new System.Drawing.Point(6, 4);
+            this.txtCode.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCode.Location = new System.Drawing.Point(6, 5);
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(110, 19);
+            this.txtCode.ReadOnly = true;
+            this.txtCode.Size = new System.Drawing.Size(110, 16);
             this.txtCode.TabIndex = 8;
             // 
             // label4
@@ -511,6 +515,18 @@
             this.panel9.TabIndex = 1;
             this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Paint);
             // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("宋体", 8F);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.label15.Location = new System.Drawing.Point(518, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(192, 11);
+            this.label15.TabIndex = 193;
+            this.label15.Text = "tips：采购单明细按“DELETE\"可删除";
+            // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -565,8 +581,8 @@
             this.DataGridDetail.AllowUserToAddRows = false;
             this.DataGridDetail.AllowUserToResizeColumns = false;
             this.DataGridDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
-            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
+            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridDetail.BackgroundColor = System.Drawing.Color.White;
             this.DataGridDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
@@ -584,14 +600,14 @@
             this.colPurchaseAmount,
             this.colRemark});
             this.DataGridDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridDetail.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.DataGridDetail.Location = new System.Drawing.Point(0, 40);
@@ -783,18 +799,6 @@
             this.labTitleProductCode.TabIndex = 3;
             this.labTitleProductCode.Text = "产品编号";
             this.labTitleProductCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("宋体", 8F);
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label15.Location = new System.Drawing.Point(518, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(192, 11);
-            this.label15.TabIndex = 193;
-            this.label15.Text = "tips：采购单明细按“DELETE\"可删除";
             // 
             // FrmPurchaseEdit
             // 

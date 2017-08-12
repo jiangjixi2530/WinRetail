@@ -5,6 +5,8 @@ using System.Text;
 using Retail.Controls;
 using System.Windows.Forms;
 using BaseTool;
+using Win.Soft.Retail.RetailDal;
+using Win.Soft.Retail.RetailModel;
 
 namespace Retail
 {
@@ -41,11 +43,28 @@ namespace Retail
         /// <summary>
         /// 自动生成编码
         /// </summary>
-        /// <param name="codeType"></param>
+        /// <param name="codeType">单据类型</param>
         /// <returns></returns>
-        public static string SysAutoCode(AutoCodeType codeType)
+        public static string GetAutoCode(AutoCodeType codeType)
         {
-            return string.Empty;
+            SysAutoCodeDal dal = new SysAutoCodeDal();
+            SysAutoCode AutoCodeSet = dal.GetModel(codeType.ToString());
+            if (AutoCodeSet == null)
+                return string.Empty;
+            string Prefix = AutoCodeSet.Prefix;
+            int SeriationLen = AutoCodeSet.SeriationLen;
+            int Seriation = 1;
+            try
+            {
+                Seriation = int.Parse(AutoCodeSet.RecentCode.Substring(AutoCodeSet.RecentCode.Length - SeriationLen, SeriationLen));
+            }
+            catch
+            {
+                Seriation = 0;
+            }
+            AutoCodeSet.RecentCode= Prefix + DateTime.Now.ToString("yyyyMMdd") + (Seriation + 1).ToString().PadLeft(SeriationLen, '0');
+            dal.Update(AutoCodeSet);
+            return AutoCodeSet.RecentCode;
         }
     }
 }
