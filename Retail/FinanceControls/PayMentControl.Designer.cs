@@ -92,7 +92,6 @@
             this.txtPayableAmount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.cmbPayerID = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtPayDate = new System.Windows.Forms.TextBox();
@@ -105,7 +104,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cmbManufacturerID = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -116,6 +114,8 @@
             this.labUnPay = new System.Windows.Forms.Label();
             this.PanelUnPayCenter = new Retail.Controls.PagePanel();
             this.txtCondition = new Retail.Controls.WatermarkTextBox();
+            this.cmbPayerID = new Retail.Controls.RetailComboBox();
+            this.cmbManufacturerID = new Retail.Controls.RetailComboBox();
             this.PanelPurchaseUnPay.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -155,7 +155,7 @@
             this.PanelPurchaseUnPay.Controls.Add(this.PanelUnPayHead);
             this.PanelPurchaseUnPay.Location = new System.Drawing.Point(19, 80);
             this.PanelPurchaseUnPay.Name = "PanelPurchaseUnPay";
-            this.PanelPurchaseUnPay.Size = new System.Drawing.Size(485, 574);
+            this.PanelPurchaseUnPay.Size = new System.Drawing.Size(225, 574);
             this.PanelPurchaseUnPay.TabIndex = 0;
             // 
             // panel4
@@ -169,7 +169,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 528);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(485, 46);
+            this.panel4.Size = new System.Drawing.Size(225, 46);
             this.panel4.TabIndex = 117;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
             // 
@@ -199,7 +199,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label1.Location = new System.Drawing.Point(395, 15);
+            this.label1.Location = new System.Drawing.Point(135, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 17);
             this.label1.TabIndex = 45;
@@ -211,7 +211,7 @@
             this.labTotalPage.AutoSize = true;
             this.labTotalPage.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.labTotalPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.labTotalPage.Location = new System.Drawing.Point(404, 16);
+            this.labTotalPage.Location = new System.Drawing.Point(144, 16);
             this.labTotalPage.Name = "labTotalPage";
             this.labTotalPage.Size = new System.Drawing.Size(15, 17);
             this.labTotalPage.TabIndex = 44;
@@ -227,7 +227,7 @@
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.Font = new System.Drawing.Font("微软雅黑", 8F);
             this.btnNextPage.ForeColor = System.Drawing.Color.Gray;
-            this.btnNextPage.Location = new System.Drawing.Point(425, 10);
+            this.btnNextPage.Location = new System.Drawing.Point(165, 10);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(50, 26);
             this.btnNextPage.TabIndex = 43;
@@ -244,7 +244,7 @@
             this.btnPrePage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrePage.Font = new System.Drawing.Font("微软雅黑", 8F);
             this.btnPrePage.ForeColor = System.Drawing.Color.Gray;
-            this.btnPrePage.Location = new System.Drawing.Point(328, 10);
+            this.btnPrePage.Location = new System.Drawing.Point(68, 10);
             this.btnPrePage.Name = "btnPrePage";
             this.btnPrePage.Size = new System.Drawing.Size(50, 26);
             this.btnPrePage.TabIndex = 42;
@@ -257,7 +257,7 @@
             this.labCurrentPage.AutoSize = true;
             this.labCurrentPage.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.labCurrentPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(130)))), ((int)(((byte)(207)))));
-            this.labCurrentPage.Location = new System.Drawing.Point(384, 16);
+            this.labCurrentPage.Location = new System.Drawing.Point(124, 16);
             this.labCurrentPage.Name = "labCurrentPage";
             this.labCurrentPage.Size = new System.Drawing.Size(15, 17);
             this.labCurrentPage.TabIndex = 41;
@@ -273,7 +273,7 @@
             this.PanelUnPayHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelUnPayHead.Location = new System.Drawing.Point(0, 0);
             this.PanelUnPayHead.Name = "PanelUnPayHead";
-            this.PanelUnPayHead.Size = new System.Drawing.Size(485, 84);
+            this.PanelUnPayHead.Size = new System.Drawing.Size(225, 84);
             this.PanelUnPayHead.TabIndex = 12;
             this.PanelUnPayHead.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
             // 
@@ -288,7 +288,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(398, 7);
+            this.button1.Location = new System.Drawing.Point(140, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 30);
             this.button1.TabIndex = 123;
@@ -466,9 +466,9 @@
             this.panelPayMentEdit.Controls.Add(this.panel21);
             this.panelPayMentEdit.Controls.Add(this.panel20);
             this.panelPayMentEdit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelPayMentEdit.Location = new System.Drawing.Point(309, 0);
+            this.panelPayMentEdit.Location = new System.Drawing.Point(447, 0);
             this.panelPayMentEdit.Name = "panelPayMentEdit";
-            this.panelPayMentEdit.Size = new System.Drawing.Size(660, 624);
+            this.panelPayMentEdit.Size = new System.Drawing.Size(522, 624);
             this.panelPayMentEdit.TabIndex = 1;
             this.panelPayMentEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
             // 
@@ -513,7 +513,7 @@
             this.DataGridDetail.RowHeadersWidth = 60;
             this.DataGridDetail.RowTemplate.Height = 40;
             this.DataGridDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridDetail.Size = new System.Drawing.Size(650, 304);
+            this.DataGridDetail.Size = new System.Drawing.Size(512, 304);
             this.DataGridDetail.TabIndex = 120;
             // 
             // Column1
@@ -606,7 +606,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel11.Location = new System.Drawing.Point(0, 578);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(660, 46);
+            this.panel11.Size = new System.Drawing.Size(522, 46);
             this.panel11.TabIndex = 118;
             // 
             // btnModify
@@ -620,7 +620,7 @@
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnModify.ForeColor = System.Drawing.Color.White;
-            this.btnModify.Location = new System.Drawing.Point(576, 6);
+            this.btnModify.Location = new System.Drawing.Point(438, 6);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(70, 30);
             this.btnModify.TabIndex = 4;
@@ -638,7 +638,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(486, 6);
+            this.btnDelete.Location = new System.Drawing.Point(348, 6);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 30);
             this.btnDelete.TabIndex = 3;
@@ -653,7 +653,7 @@
             this.PanelDetailTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelDetailTitle.Location = new System.Drawing.Point(0, 234);
             this.PanelDetailTitle.Name = "PanelDetailTitle";
-            this.PanelDetailTitle.Size = new System.Drawing.Size(660, 40);
+            this.PanelDetailTitle.Size = new System.Drawing.Size(522, 40);
             this.PanelDetailTitle.TabIndex = 14;
             // 
             // panel13
@@ -670,7 +670,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(10, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(650, 40);
+            this.panel13.Size = new System.Drawing.Size(512, 40);
             this.panel13.TabIndex = 116;
             // 
             // label14
@@ -680,7 +680,7 @@
             this.label14.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label14.Location = new System.Drawing.Point(510, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(140, 40);
+            this.label14.Size = new System.Drawing.Size(2, 40);
             this.label14.TabIndex = 12;
             this.label14.Text = "备注";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -800,7 +800,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel21.Location = new System.Drawing.Point(0, 80);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(660, 154);
+            this.panel21.Size = new System.Drawing.Size(522, 154);
             this.panel21.TabIndex = 13;
             this.panel21.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFunction_Paint);
             // 
@@ -917,16 +917,6 @@
             this.panel6.Size = new System.Drawing.Size(120, 30);
             this.panel6.TabIndex = 121;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // cmbPayerID
-            // 
-            this.cmbPayerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbPayerID.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cmbPayerID.FormattingEnabled = true;
-            this.cmbPayerID.Location = new System.Drawing.Point(4, 1);
-            this.cmbPayerID.Name = "cmbPayerID";
-            this.cmbPayerID.Size = new System.Drawing.Size(114, 28);
-            this.cmbPayerID.TabIndex = 122;
             // 
             // label5
             // 
@@ -1048,7 +1038,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(0, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(660, 80);
+            this.panel20.Size = new System.Drawing.Size(522, 80);
             this.panel20.TabIndex = 12;
             this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFunction_Paint);
             // 
@@ -1063,16 +1053,6 @@
             this.panel2.Size = new System.Drawing.Size(120, 30);
             this.panel2.TabIndex = 122;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // cmbManufacturerID
-            // 
-            this.cmbManufacturerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbManufacturerID.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cmbManufacturerID.FormattingEnabled = true;
-            this.cmbManufacturerID.Location = new System.Drawing.Point(4, 1);
-            this.cmbManufacturerID.Name = "cmbManufacturerID";
-            this.cmbManufacturerID.Size = new System.Drawing.Size(114, 28);
-            this.cmbManufacturerID.TabIndex = 122;
             // 
             // label29
             // 
@@ -1166,7 +1146,7 @@
             this.PanelUnPayCenter.Location = new System.Drawing.Point(0, 84);
             this.PanelUnPayCenter.Name = "PanelUnPayCenter";
             this.PanelUnPayCenter.PageMethod = BaseTool.PageMethodEnum.Normal;
-            this.PanelUnPayCenter.Size = new System.Drawing.Size(485, 444);
+            this.PanelUnPayCenter.Size = new System.Drawing.Size(225, 444);
             this.PanelUnPayCenter.SpaceLeftAndRight = 1;
             this.PanelUnPayCenter.SpaceUpAndLower = 1;
             this.PanelUnPayCenter.TabIndex = 118;
@@ -1181,6 +1161,32 @@
             this.txtCondition.Size = new System.Drawing.Size(170, 19);
             this.txtCondition.TabIndex = 115;
             this.txtCondition.WaterMark = "订单号/供应商";
+            // 
+            // cmbPayerID
+            // 
+            this.cmbPayerID.DataSouceType = Retail.Controls.DataSouceTypeEnum.User;
+            this.cmbPayerID.DisplayMember = "Name";
+            this.cmbPayerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbPayerID.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.cmbPayerID.FormattingEnabled = true;
+            this.cmbPayerID.Location = new System.Drawing.Point(3, 1);
+            this.cmbPayerID.Name = "cmbPayerID";
+            this.cmbPayerID.Size = new System.Drawing.Size(114, 28);
+            this.cmbPayerID.TabIndex = 124;
+            this.cmbPayerID.ValueMember = "ID";
+            // 
+            // cmbManufacturerID
+            // 
+            this.cmbManufacturerID.DataSouceType = Retail.Controls.DataSouceTypeEnum.User;
+            this.cmbManufacturerID.DisplayMember = "Name";
+            this.cmbManufacturerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbManufacturerID.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.cmbManufacturerID.FormattingEnabled = true;
+            this.cmbManufacturerID.Location = new System.Drawing.Point(4, 1);
+            this.cmbManufacturerID.Name = "cmbManufacturerID";
+            this.cmbManufacturerID.Size = new System.Drawing.Size(114, 28);
+            this.cmbManufacturerID.TabIndex = 123;
+            this.cmbManufacturerID.ValueMember = "ID";
             // 
             // PayMentControl
             // 
@@ -1291,7 +1297,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbPayerID;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txtPayableAmount;
         private System.Windows.Forms.Label label6;
@@ -1328,6 +1333,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cmbManufacturerID;
+        private Controls.RetailComboBox cmbManufacturerID;
+        private Controls.RetailComboBox cmbPayerID;
     }
 }

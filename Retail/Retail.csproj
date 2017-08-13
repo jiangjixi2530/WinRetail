@@ -115,6 +115,9 @@
     <Compile Include="Controls\PagePanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\RetailComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\UserComboBox.cs">
       <SubType>Component</SubType>
     </Compile>

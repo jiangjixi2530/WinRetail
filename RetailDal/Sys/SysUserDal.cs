@@ -3,6 +3,7 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 using BaseTool;
+using System.Collections.Generic;
 namespace Win.Soft.Retail.RetailDal
 {
     /// <summary>
@@ -258,7 +259,17 @@ namespace Win.Soft.Retail.RetailDal
             }
             return DbHelperSQL.Query(strSql.ToString());
         }
-
+        /// <summary>
+        /// 下拉框数据源
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetComboBoxDataSource()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select ID,UserName AS Name");
+            strSql.Append(" FROM SysUser WHERE IsValid=1");
+            return DbHelperSQL.Query(strSql.ToString()).Tables[0];
+        }
         /// <summary>
         /// 获得前几行数据
         /// </summary>
@@ -362,6 +373,20 @@ namespace Win.Soft.Retail.RetailDal
             {
                 return false;
             }
+        }
+        /// <summary>
+        /// DataTable转List
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public List<Win.Soft.Retail.RetailModel.SysUser> DataTableToList(DataTable dt)
+        {
+            List<Win.Soft.Retail.RetailModel.SysUser> list = new List<RetailModel.SysUser>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                list.Add(DataRowToModel(dr));
+            }
+            return list;
         }
         #endregion  ExtensionMethod
     }

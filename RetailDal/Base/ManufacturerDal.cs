@@ -295,7 +295,6 @@ namespace Win.Soft.Retail.RetailDal
 			}
 			return DbHelperSQL.Query(strSql.ToString());
 		}
-
 		/// <summary>
 		/// 获得前几行数据
 		/// </summary>

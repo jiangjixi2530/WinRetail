@@ -56,13 +56,17 @@ namespace Retail
             int Seriation = 1;
             try
             {
-                Seriation = int.Parse(AutoCodeSet.RecentCode.Substring(AutoCodeSet.RecentCode.Length - SeriationLen, SeriationLen));
+                if (AutoCodeSet.RecentCode.Contains(DateTime.Now.ToString("yyyyMMdd")))
+                    Seriation = int.Parse(AutoCodeSet.RecentCode.Substring(AutoCodeSet.RecentCode.Length - SeriationLen, SeriationLen));
+                else
+                    Seriation = 0;
+
             }
             catch
             {
                 Seriation = 0;
             }
-            AutoCodeSet.RecentCode= Prefix + DateTime.Now.ToString("yyyyMMdd") + (Seriation + 1).ToString().PadLeft(SeriationLen, '0');
+            AutoCodeSet.RecentCode = Prefix + DateTime.Now.ToString("yyyyMMdd") + (Seriation + 1).ToString().PadLeft(SeriationLen, '0');
             dal.Update(AutoCodeSet);
             return AutoCodeSet.RecentCode;
         }

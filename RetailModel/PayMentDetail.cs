@@ -23,7 +23,7 @@ namespace Win.Soft.Retail.RetailModel
         private bool _issettle;
         private string _remark;
         /// <summary>
-        /// 
+        /// 主键
         /// </summary>
         public int ID
         {
@@ -31,7 +31,7 @@ namespace Win.Soft.Retail.RetailModel
             get { return _id; }
         }
         /// <summary>
-        /// 
+        /// 付款ID
         /// </summary>
         public int PayMentID
         {
@@ -39,7 +39,7 @@ namespace Win.Soft.Retail.RetailModel
             get { return _paymentid; }
         }
         /// <summary>
-        /// 
+        /// 采购ID
         /// </summary>
         public int PurchaseID
         {
@@ -47,7 +47,7 @@ namespace Win.Soft.Retail.RetailModel
             get { return _purchaseid; }
         }
         /// <summary>
-        /// 
+        /// 已付金额
         /// </summary>
         public decimal PaidAmount
         {
@@ -55,7 +55,7 @@ namespace Win.Soft.Retail.RetailModel
             get { return _paidamount; }
         }
         /// <summary>
-        /// 
+        /// 应付金额
         /// </summary>
         public decimal PayableAmount
         {
@@ -63,7 +63,7 @@ namespace Win.Soft.Retail.RetailModel
             get { return _payableamount; }
         }
         /// <summary>
-        /// 
+        /// 实付金额
         /// </summary>
         public decimal PayAmount
         {
@@ -71,7 +71,7 @@ namespace Win.Soft.Retail.RetailModel
             get { return _payamount; }
         }
         /// <summary>
-        /// 
+        /// 是否结清
         /// </summary>
         public bool IsSettle
         {
@@ -79,12 +79,28 @@ namespace Win.Soft.Retail.RetailModel
             get { return _issettle; }
         }
         /// <summary>
-        /// 
+        /// 备注
         /// </summary>
         public string Remark
         {
             set { _remark = value; }
             get { return _remark; }
+        }
+        /// <summary>
+        /// 采购单号
+        /// </summary>
+        public string PurchaseCode
+        {
+            get;
+            set;
+        }
+        /// <summary>
+        /// 采购金额
+        /// </summary>
+        public decimal PurchaseAmount
+        {
+            set;
+            get;
         }
         #endregion Model
 

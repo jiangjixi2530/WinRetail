@@ -43,12 +43,15 @@ namespace Retail.FinanceControls
         /// <param name="e"></param>
         private void FrmPayMent_Load(object sender, EventArgs e)
         {
+            this.cmbManufacturerID.DataSouceType = Retail.Controls.DataSouceTypeEnum.Manufacturer;
+            this.cmbPayerID.DataSouceType = Retail.Controls.DataSouceTypeEnum.User;
             this.txtPurchaseStartDate.Text = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
             this.txtPurchaseEndDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             this.PanelPurchaseUnPay.Dock = DockStyle.Fill;
             this.PanelPurchaseUnPay.Visible = true;
             this.panelPurchasePaid.Visible = false;
             SinglePayEvent += SinglePayed;
+            this.DataGridDetail.AutoGenerateColumns = false;
         }
         /// <summary>
         /// 单笔付款
@@ -66,11 +69,12 @@ namespace Retail.FinanceControls
             PayMentDetail paymentdetail = new PayMentDetail();
             paymentdetail.PurchaseID = unPay.UnPayOrderInfo.ID;
             paymentdetail.PaidAmount = unPay.UnPayOrderInfo.PurchaseAmount - unPay.UnPayOrderInfo.UnPayAmount;
-            paymentdetail.PayableAmount =  unPay.UnPayOrderInfo.UnPayAmount;
+            paymentdetail.PayableAmount = unPay.UnPayOrderInfo.UnPayAmount;
             paymentdetail.PayAmount = unPay.UnPayOrderInfo.UnPayAmount;
             paymentdetail.IsSettle = false;
             List<PayMentDetail> listPayMentDetail = new List<PayMentDetail>();
             listPayMentDetail.Add(paymentdetail);
+            SetDetail(payment, listPayMentDetail);
         }
         /// <summary>
         /// 设置明细
@@ -80,7 +84,13 @@ namespace Retail.FinanceControls
         private void SetDetail(PayMent payMent, List<PayMentDetail> listPayMentDetail)
         {
             this.cmbManufacturerID.SelectedValue = payMent.ManufacturerID;
-            this.txtCode.Text = "";
+            this.txtCode.Text = string.IsNullOrEmpty(payMent.Code) ? SysHelper.GetAutoCode(AutoCodeType.PayMent) : payMent.Code;
+            this.cmbPayerID.SelectedValue = payMent.PayerID==0 ? Global.UserID : payMent.PayerID;
+            this.txtPayDate.Text = string.IsNullOrEmpty(payMent.PayDate.ToString()) ? DateTime.Now.ToString("yyyy-MM-dd") : payMent.PayDate.ToString("yyyy-MM-dd");
+            this.txtPayableAmount.Text = payMent.PayableAmount.ToString();
+            this.txtPayAmount.Text = payMent.PayAmount.ToString();
+            this.txtRemark.Text = payMent.Remark;
+            this.DataGridDetail.DataSource = new BindingList<PayMentDetail>(listPayMentDetail);
         }
         /// <summary>
         /// 查询点击事件

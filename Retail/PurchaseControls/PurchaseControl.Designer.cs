@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelLeft = new System.Windows.Forms.Panel();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.mcEndDate = new System.Windows.Forms.MonthCalendar();
@@ -232,9 +232,9 @@
             // 
             this.txtCondition.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCondition.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.txtCondition.Location = new System.Drawing.Point(1, 6);
+            this.txtCondition.Location = new System.Drawing.Point(10, 6);
             this.txtCondition.Name = "txtCondition";
-            this.txtCondition.Size = new System.Drawing.Size(170, 19);
+            this.txtCondition.Size = new System.Drawing.Size(160, 19);
             this.txtCondition.TabIndex = 115;
             this.txtCondition.WaterMark = "订单号/供应商";
             // 
@@ -472,8 +472,8 @@
             this.DataGridDetail.AllowUserToDeleteRows = false;
             this.DataGridDetail.AllowUserToResizeColumns = false;
             this.DataGridDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
-            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Snow;
+            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGridDetail.BackgroundColor = System.Drawing.Color.White;
             this.DataGridDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
@@ -491,14 +491,14 @@
             this.colPurchaseAmount,
             this.Column6});
             this.DataGridDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle8;
             this.DataGridDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridDetail.Location = new System.Drawing.Point(10, 270);
             this.DataGridDetail.MultiSelect = false;
