@@ -95,6 +95,14 @@ namespace Win.Soft.Retail.RetailModel
             set;
         }
         /// <summary>
+        /// 采购日期
+        /// </summary>
+        public DateTime PurchaseDate
+        {
+            get;
+            set;
+        }
+        /// <summary>
         /// 采购金额
         /// </summary>
         public decimal PurchaseAmount

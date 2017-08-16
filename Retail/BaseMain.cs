@@ -115,7 +115,7 @@ namespace Retail
         {
             while (true)
             {
-                this.Invoke((EventHandler)delegate
+                this.labCurrentTime.Invoke((EventHandler)delegate
                {
                    this.labCurrentTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                });

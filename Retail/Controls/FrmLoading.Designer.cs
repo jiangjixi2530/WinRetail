@@ -34,6 +34,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Retail.Properties.Resources.Loading;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -52,6 +53,7 @@
             this.Name = "FrmLoading";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmLoading";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLoading_FormClosed);
             this.Load += new System.EventHandler(this.FrmLoading_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

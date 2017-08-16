@@ -82,37 +82,75 @@ namespace Retail.PurchaseControls
                 1,
                 ButtonBorderStyle.Solid);
         }
-
+        /// <summary>
+        /// 点击保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ComputeTotal();
-            CurrentOrder.Code = this.txtCode.Text;
-            CurrentOrder.PurchaseDate =  Convert.ToDateTime(this.txtPurchaseDate.Text);
-            CurrentOrder.ManufacturerID = Convert.ToInt32(cmbManufacturerID.SelectedValue);
-            CurrentOrder.Relation = txtRelation.Text;
-            CurrentOrder.Telephone = txtTelephone.Text;
-            CurrentOrder.ReceiveAddress = txtReceiveAddress.Text;
-            CurrentOrder.Receiver = txtReceiver.Text;
-            CurrentOrder.ReceiverPhone = txtReceiverPhone.Text;
-            CurrentOrder.PurchaseCount = Convert.ToDecimal(this.txtPurchaseCount.Text);
-            CurrentOrder.PurchaseAmount = Convert.ToDecimal(this.txtPurchaseAmount.Text);
-            CurrentOrder.CreateUserID = Global.UserID;
-            if (CurrentDal.SaveObject(CurrentOrder, new List<PurchaseDetail>(ListDetailSource)))
+            Thread saveThread = new Thread();
+            SysHelper.ShowLoading();
+        }
+        /// <summary>
+        /// 数据保存
+        /// </summary>
+        /// <returns></returns>
+        private void Save()
+        {
+            bool isSuccess = false;
+            try
             {
-                SysHelper.AlertMsg("数据保存成功！");
-                this.Close();
+                ComputeTotal();
+                CurrentOrder.Code = this.txtCode.Text;
+                CurrentOrder.PurchaseDate = Convert.ToDateTime(this.txtPurchaseDate.Text);
+                CurrentOrder.ManufacturerID = Convert.ToInt32(cmbManufacturerID.SelectedValue);
+                CurrentOrder.Relation = txtRelation.Text;
+                CurrentOrder.Telephone = txtTelephone.Text;
+                CurrentOrder.ReceiveAddress = txtReceiveAddress.Text;
+                CurrentOrder.Receiver = txtReceiver.Text;
+                CurrentOrder.ReceiverPhone = txtReceiverPhone.Text;
+                CurrentOrder.PurchaseCount = Convert.ToDecimal(this.txtPurchaseCount.Text);
+                CurrentOrder.PurchaseAmount = Convert.ToDecimal(this.txtPurchaseAmount.Text);
+                CurrentOrder.CreateUserID = Global.UserID;
+                isSuccess = CurrentDal.SaveObject(CurrentOrder, new List<PurchaseDetail>(ListDetailSource));
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                this.Invoke((EventHandler)delegate
+                    {
+                        SysHelper.CloseLoading();
+                    });
+            }
+            if (isSuccess)
+            {
+                this.Invoke((EventHandler)delegate
+                {
+                    SysHelper.AlertMsg("数据保存成功！");
+                    this.Close();
+                });
             }
             else
             {
-                SysHelper.AlertMsg("数据保存失败，请验证数据完整性！");
+                this.Invoke((EventHandler)delegate
+                    {
+                        SysHelper.AlertMsg("数据保存失败，请验证数据完整性！");
+                    });
             }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// 界面加载
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPurchaseEdit_Load(object sender, EventArgs e)
         {
             this.cmbManufacturerID.DisplayMember = "Name";
@@ -177,7 +215,7 @@ namespace Retail.PurchaseControls
                 if (e.KeyCode == Keys.Delete)
                 {
                     int index = this.DataGridDetail.CurrentRow.Index;
-                    if(SysHelper.ConfirmMsg("确定要删除该信息？")== System.Windows.Forms.DialogResult.OK)
+                    if (SysHelper.ConfirmMsg("确定要删除该信息？") == System.Windows.Forms.DialogResult.OK)
                     {
                         ListDetailSource.RemoveAt(index);
                         this.DataGridDetail.Refresh();
@@ -194,7 +232,7 @@ namespace Retail.PurchaseControls
         private void DataGridDetail_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             SysHelper.AlertMsg("请检查数据输入是否正确！");
-            DataGridDetail.CancelEdit(); 
+            DataGridDetail.CancelEdit();
         }
     }
 }

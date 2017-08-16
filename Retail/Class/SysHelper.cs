@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using BaseTool;
 using Win.Soft.Retail.RetailDal;
 using Win.Soft.Retail.RetailModel;
+using System.Threading;
 
 namespace Retail
 {
@@ -37,8 +38,27 @@ namespace Retail
         /// </summary>
         public static void ShowLoading()
         {
-            FrmLoading load = new FrmLoading();
-            ((BaseMain)Global.MainForm).ShadeShowDialog(load);
+            //Thread show = new Thread(() =>
+            //{
+            //    ((BaseMain)Global.MainForm).Invoke((Action)(() =>
+            //     {
+            //         ((BaseMain)Global.MainForm).ShadeShowDialog(FrmLoading.FrmLoad);
+            //     }));
+            //});
+            //show.IsBackground = true;
+            //show.Start();
+            FrmLoading.FrmLoad.ShowDialog();
+        }
+        public static void CloseLoading()
+        {
+            try
+            {
+                FrmLoading.FrmLoad.Close();
+            }
+            catch
+            {
+
+            }
         }
         /// <summary>
         /// 自动生成编码

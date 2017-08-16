@@ -60,21 +60,48 @@ namespace Retail.FinanceControls
         private void SinglePayed(UnPayOrder unPay)
         {
             PayMent payment = new PayMent();
-            payment.Code = "";
             payment.PayDate = DateTime.Now;
             payment.PayerID = Global.UserID;
             payment.ManufacturerID = unPay.UnPayOrderInfo.ManufacturerID;
             payment.PayableAmount = unPay.UnPayOrderInfo.UnPayAmount;
             payment.PayAmount = payment.PayableAmount;
             PayMentDetail paymentdetail = new PayMentDetail();
+            paymentdetail.PurchaseCode = unPay.UnPayOrderInfo.Code;
+            paymentdetail.PurchaseDate = unPay.UnPayOrderInfo.PurchaseDate;
+            paymentdetail.PurchaseAmount = unPay.UnPayOrderInfo.PurchaseAmount;
             paymentdetail.PurchaseID = unPay.UnPayOrderInfo.ID;
             paymentdetail.PaidAmount = unPay.UnPayOrderInfo.PurchaseAmount - unPay.UnPayOrderInfo.UnPayAmount;
             paymentdetail.PayableAmount = unPay.UnPayOrderInfo.UnPayAmount;
             paymentdetail.PayAmount = unPay.UnPayOrderInfo.UnPayAmount;
-            paymentdetail.IsSettle = false;
-            List<PayMentDetail> listPayMentDetail = new List<PayMentDetail>();
-            listPayMentDetail.Add(paymentdetail);
-            SetDetail(payment, listPayMentDetail);
+            paymentdetail.IsSettle = true;
+            List<PayMentDetail> payMentDetailList = new List<PayMentDetail>();
+            payMentDetailList.Add(paymentdetail);
+            SetDetail(payment, payMentDetailList);
+        }
+        private void BatchPayed(List<UnPayOrder> unPayList)
+        {        
+            PayMent payment = new PayMent();
+            payment.PayDate = DateTime.Now;
+            payment.PayerID = Global.UserID;
+            payment.ManufacturerID = unPayList[0].UnPayOrderInfo.ManufacturerID;
+            payment.PayableAmount = unPayList.Sum(x => x.UnPayOrderInfo.UnPayAmount);
+            payment.PayAmount = payment.PayableAmount;
+            List<PayMentDetail> payMentDetailList = new List<PayMentDetail>();
+            foreach(UnPayOrder item in unPayList)
+            {
+                PayMentDetail paymentdetail = new PayMentDetail();
+                paymentdetail.PurchaseCode = item.UnPayOrderInfo.Code;
+                paymentdetail.PurchaseDate = item.UnPayOrderInfo.PurchaseDate;
+                paymentdetail.PurchaseAmount = item.UnPayOrderInfo.PurchaseAmount;
+                paymentdetail.PurchaseID = item.UnPayOrderInfo.ID;
+                paymentdetail.PaidAmount = item.UnPayOrderInfo.PurchaseAmount - item.UnPayOrderInfo.UnPayAmount;
+                paymentdetail.PayableAmount = item.UnPayOrderInfo.UnPayAmount;
+                paymentdetail.PayAmount = item.UnPayOrderInfo.UnPayAmount;
+                paymentdetail.IsSettle = true;
+                payMentDetailList.Add(paymentdetail);
+            }
+            SetDetail(payment, payMentDetailList);
+                
         }
         /// <summary>
         /// 设置明细

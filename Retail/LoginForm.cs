@@ -28,9 +28,9 @@ namespace Retail
         /// <param name="e"></param>
         private void PicLogin_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.txtUserName.Text.Trim()) || string.IsNullOrEmpty(this.txtPassword.Text.Trim()))
+            if (string.IsNullOrEmpty(this.txtUserName.Text.Trim()))
             {
-                Retail.Controls.AlertMsg alert = new Controls.AlertMsg("请输入账号密码!");
+                Retail.Controls.AlertMsg alert = new Controls.AlertMsg("请输入账号!");
                 alert.ShowDialog();
             }
             else
