@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Win.Soft.Retail.RetailDal;
 using Win.Soft.Retail.RetailModel;
@@ -36,6 +37,7 @@ namespace Retail.PurchaseControls
         //    get { return _CurrentOrder; }
         //    set { _CurrentOrder = value; }
         //}
+        Thread saveThread;
         public FrmPurchaseEdit(Purchase order)
         {
             InitializeComponent();
@@ -89,8 +91,27 @@ namespace Retail.PurchaseControls
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Thread saveThread = new Thread();
+            ComputeTotal();
+            CurrentOrder.Code = this.txtCode.Text;
+            CurrentOrder.PurchaseDate = Convert.ToDateTime(this.txtPurchaseDate.Text);
+            CurrentOrder.ManufacturerID = Convert.ToInt32(cmbManufacturerID.SelectedValue);
+            CurrentOrder.Relation = txtRelation.Text;
+            CurrentOrder.Telephone = txtTelephone.Text;
+            CurrentOrder.ReceiveAddress = txtReceiveAddress.Text;
+            CurrentOrder.Receiver = txtReceiver.Text;
+            CurrentOrder.ReceiverPhone = txtReceiverPhone.Text;
+            CurrentOrder.PurchaseCount = Convert.ToDecimal(this.txtPurchaseCount.Text);
+            CurrentOrder.PurchaseAmount = Convert.ToDecimal(this.txtPurchaseAmount.Text);
+            CurrentOrder.CreateUserID = Global.UserID;
+            saveThread = new Thread(Save);
+            saveThread.IsBackground = true;
+            saveThread.Start();
+            Retail.Controls.FrmLoading.ManualClosed += LoadingManualClosed;
             SysHelper.ShowLoading();
+        }
+        private void LoadingManualClosed(object sender)
+        {
+            saveThread.Abort();
         }
         /// <summary>
         /// 数据保存
@@ -101,18 +122,6 @@ namespace Retail.PurchaseControls
             bool isSuccess = false;
             try
             {
-                ComputeTotal();
-                CurrentOrder.Code = this.txtCode.Text;
-                CurrentOrder.PurchaseDate = Convert.ToDateTime(this.txtPurchaseDate.Text);
-                CurrentOrder.ManufacturerID = Convert.ToInt32(cmbManufacturerID.SelectedValue);
-                CurrentOrder.Relation = txtRelation.Text;
-                CurrentOrder.Telephone = txtTelephone.Text;
-                CurrentOrder.ReceiveAddress = txtReceiveAddress.Text;
-                CurrentOrder.Receiver = txtReceiver.Text;
-                CurrentOrder.ReceiverPhone = txtReceiverPhone.Text;
-                CurrentOrder.PurchaseCount = Convert.ToDecimal(this.txtPurchaseCount.Text);
-                CurrentOrder.PurchaseAmount = Convert.ToDecimal(this.txtPurchaseAmount.Text);
-                CurrentOrder.CreateUserID = Global.UserID;
                 isSuccess = CurrentDal.SaveObject(CurrentOrder, new List<PurchaseDetail>(ListDetailSource));
             }
             catch
@@ -131,6 +140,7 @@ namespace Retail.PurchaseControls
                 this.Invoke((EventHandler)delegate
                 {
                     SysHelper.AlertMsg("数据保存成功！");
+                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     this.Close();
                 });
             }

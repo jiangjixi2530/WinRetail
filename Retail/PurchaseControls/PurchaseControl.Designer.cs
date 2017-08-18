@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelLeft = new System.Windows.Forms.Panel();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.mcEndDate = new System.Windows.Forms.MonthCalendar();
             this.mcStartDate = new System.Windows.Forms.MonthCalendar();
             this.labNoData = new System.Windows.Forms.Label();
-            this.PanelOrderList = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picSearch = new System.Windows.Forms.PictureBox();
-            this.txtCondition = new Retail.Controls.WatermarkTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labTotalPage = new System.Windows.Forms.Label();
             this.btnNextPage = new System.Windows.Forms.Button();
@@ -110,6 +108,8 @@
             this.btnModify = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtCondition = new Retail.Controls.WatermarkTextBox();
+            this.pagePanel1 = new Retail.Controls.PagePanel();
             this.PanelLeft.SuspendLayout();
             this.PanelCenter.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -144,10 +144,10 @@
             // 
             // PanelCenter
             // 
+            this.PanelCenter.Controls.Add(this.pagePanel1);
             this.PanelCenter.Controls.Add(this.mcEndDate);
             this.PanelCenter.Controls.Add(this.mcStartDate);
             this.PanelCenter.Controls.Add(this.labNoData);
-            this.PanelCenter.Controls.Add(this.PanelOrderList);
             this.PanelCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelCenter.Location = new System.Drawing.Point(0, 52);
             this.PanelCenter.Name = "PanelCenter";
@@ -185,14 +185,6 @@
             this.labNoData.Text = "暂无采购单信息";
             this.labNoData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // PanelOrderList
-            // 
-            this.PanelOrderList.AutoSize = true;
-            this.PanelOrderList.Location = new System.Drawing.Point(1, 0);
-            this.PanelOrderList.Name = "PanelOrderList";
-            this.PanelOrderList.Size = new System.Drawing.Size(366, 410);
-            this.PanelOrderList.TabIndex = 0;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel1);
@@ -227,16 +219,6 @@
             this.picSearch.Size = new System.Drawing.Size(20, 20);
             this.picSearch.TabIndex = 116;
             this.picSearch.TabStop = false;
-            // 
-            // txtCondition
-            // 
-            this.txtCondition.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCondition.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.txtCondition.Location = new System.Drawing.Point(10, 6);
-            this.txtCondition.Name = "txtCondition";
-            this.txtCondition.Size = new System.Drawing.Size(160, 19);
-            this.txtCondition.TabIndex = 115;
-            this.txtCondition.WaterMark = "订单号/供应商";
             // 
             // label1
             // 
@@ -472,8 +454,8 @@
             this.DataGridDetail.AllowUserToDeleteRows = false;
             this.DataGridDetail.AllowUserToResizeColumns = false;
             this.DataGridDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Snow;
-            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridDetail.BackgroundColor = System.Drawing.Color.White;
             this.DataGridDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
@@ -491,14 +473,14 @@
             this.colPurchaseAmount,
             this.Column6});
             this.DataGridDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridDetail.Location = new System.Drawing.Point(10, 270);
             this.DataGridDetail.MultiSelect = false;
@@ -1115,6 +1097,27 @@
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPaint);
             // 
+            // txtCondition
+            // 
+            this.txtCondition.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCondition.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.txtCondition.Location = new System.Drawing.Point(10, 6);
+            this.txtCondition.Name = "txtCondition";
+            this.txtCondition.Size = new System.Drawing.Size(160, 19);
+            this.txtCondition.TabIndex = 115;
+            this.txtCondition.WaterMark = "订单号/供应商";
+            // 
+            // pagePanel1
+            // 
+            this.pagePanel1.ListPageControls = null;
+            this.pagePanel1.Location = new System.Drawing.Point(223, 218);
+            this.pagePanel1.Name = "pagePanel1";
+            this.pagePanel1.PageMethod = BaseTool.PageMethodEnum.Normal;
+            this.pagePanel1.Size = new System.Drawing.Size(200, 100);
+            this.pagePanel1.SpaceLeftAndRight = 10;
+            this.pagePanel1.SpaceUpAndLower = 10;
+            this.pagePanel1.TabIndex = 115;
+            // 
             // PurchaseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1129,7 +1132,6 @@
             this.SizeChanged += new System.EventHandler(this.PurchaseControl_SizeChanged);
             this.PanelLeft.ResumeLayout(false);
             this.PanelCenter.ResumeLayout(false);
-            this.PanelCenter.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1178,7 +1180,6 @@
         private System.Windows.Forms.Button btnPrePage;
         private System.Windows.Forms.Label labCurrentPage;
         private System.Windows.Forms.Panel PanelCenter;
-        private System.Windows.Forms.Panel PanelOrderList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private Controls.WatermarkTextBox txtCondition;
@@ -1239,6 +1240,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button btnAdd;
+        private Controls.PagePanel pagePanel1;
 
 
     }

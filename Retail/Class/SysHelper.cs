@@ -47,6 +47,7 @@ namespace Retail
             //});
             //show.IsBackground = true;
             //show.Start();
+            //((BaseMain)Global.MainForm).ShadeShowDialog(FrmLoading.FrmLoad);
             FrmLoading.FrmLoad.ShowDialog();
         }
         public static void CloseLoading()

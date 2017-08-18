@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Retail.Controls
@@ -15,11 +17,18 @@ namespace Retail.Controls
         /// 单例
         /// </summary>
         private static FrmLoading frmLoading;
+        /// <summary>
+        /// 锁
+        /// </summary>
         private static object _lock = new object();
         /// <summary>
         /// 窗体是否已经打开
         /// </summary>
         private static bool IsloadOpen = false;
+        /// <summary>
+        /// 手动关闭事件
+        /// </summary>
+        public static LoadingManualClosed ManualClosed { get; set; }
         private FrmLoading()
         {
             InitializeComponent();
@@ -28,6 +37,9 @@ namespace Retail.Controls
         private void FrmLoading_Load(object sender, EventArgs e)
         {
             this.TransparencyKey = Color.Red;
+            this.Opacity = 0.8;
+            this.picClose.Visible = false;
+            this.timCloseEnable.Enabled = true;
         }
         /// <summary>
         /// 获取加载框（多线程单例模式 ）
@@ -51,25 +63,50 @@ namespace Retail.Controls
             }
         }
         #region 隐式重写
-        public override void Show()
+        public void Show()
         {
             if (IsloadOpen)
                 throw new Exception("窗体已经打开");
             IsloadOpen = true;
             base.Show();
         }
-        public override void ShowDialog()
+        public DialogResult ShowDialog()
         {
             if (IsloadOpen)
                 throw new Exception("窗体已经打开");
             IsloadOpen = true;
-            base.ShowDialog();
+            return base.ShowDialog();
+        }
+        public void Close()
+        {
+            if (IsloadOpen)
+                base.Close();
         }
         #endregion
 
         private void FrmLoading_FormClosed(object sender, FormClosedEventArgs e)
         {
+            timCloseEnable.Enabled = false;
             IsloadOpen = false;
+            //每次关闭取消事件的注册
+            ManualClosed = null;
+        }
+
+        private void timCloseEnable_Tick(object sender, EventArgs e)
+        {
+            this.timCloseEnable.Enabled = false;
+            this.picClose.Visible = true;
+        }
+        /// <summary>
+        /// 手动关闭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            if (ManualClosed != null)
+                ManualClosed(this);
+            Close();
         }
     }
 }

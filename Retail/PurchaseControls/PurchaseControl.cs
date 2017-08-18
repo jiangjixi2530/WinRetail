@@ -39,6 +39,10 @@ namespace Retail.PurchaseControls
         /// 选中的采购单
         /// </summary>
         private PurchaseOrder OrderSelected;
+        /// <summary>
+        /// 查询线程
+        /// </summary>
+        private Thread queryThread;
         public PurchaseControl()
         {
             InitializeComponent();
@@ -50,12 +54,6 @@ namespace Retail.PurchaseControls
             this.txtEndDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             this.DataGridDetail.AutoGenerateColumns = false;
         }
-        public void ShowData()
-        {
-            Thread ThQuery = new Thread(QueryData);
-            ThQuery.IsBackground = true;
-            ThQuery.Start();
-        }
         /// <summary>
         /// 查询
         /// </summary>
@@ -63,7 +61,10 @@ namespace Retail.PurchaseControls
         /// <param name="e"></param>
         private void btnQuery_Click(object sender, EventArgs e)
         {
-            QueryData();
+            queryThread = new Thread(QueryData);
+            queryThread.IsBackground = true;
+            queryThread.Start();
+            SysHelper.ShowLoading();
         }
         /// <summary>
         /// 查询数据
@@ -78,27 +79,34 @@ namespace Retail.PurchaseControls
                 }
                 else
                 {
-                    this.Invoke((EventHandler)delegate
+                    this.BeginInvoke((EventHandler)delegate
                     {
-                        this.PanelOrderList.Controls.Clear();
-                        ListPurchaseOrder = new List<PurchaseOrder>();
-                        ListPurchase = dal.GetDataList(this.txtStartDate.Text.Trim(), this.txtEndDate.Text.Trim() + " 23:59");
-                        foreach (Purchase item in ListPurchase)// for (int i = ListPurchase.Count - 1; i >= 0; i--)
-                        {
-                            PurchaseOrder ordercontrol = new PurchaseOrder();
-                            ordercontrol.CurrentItem = item;
-                            ordercontrol.Dock = DockStyle.Top;
-                            ordercontrol.PurchaseOrderClicked += new PurchaseOrder.PurchaseOrderClick((sender) => PurchaseOrderClick(sender));
-                            this.PanelOrderList.Controls.Add(ordercontrol);
-                            ListPurchaseOrder.Add(ordercontrol);
-                        }
-                        ShowDataByPage(1);
+                        //this.PanelOrderList.Controls.Clear();
                     });
+                    ListPurchaseOrder = new List<PurchaseOrder>();
+                    ListPurchase = dal.GetDataList(this.txtStartDate.Text.Trim(), this.txtEndDate.Text.Trim() + " 23:59");
+                    foreach (Purchase item in ListPurchase)// for (int i = ListPurchase.Count - 1; i >= 0; i--)
+                    {
+                        PurchaseOrder ordercontrol = new PurchaseOrder();
+                        ordercontrol.CurrentItem = item;
+                        ordercontrol.Dock = DockStyle.Top;
+                        ordercontrol.PurchaseOrderClicked += new PurchaseOrder.PurchaseOrderClick((sender) => PurchaseOrderClick(sender));
+                       // this.PanelOrderList.Controls.Add(ordercontrol);
+                        ListPurchaseOrder.Add(ordercontrol);
+                    }
+                    ShowDataByPage(1);
                 }
             }
             catch
             {
                 SysHelper.AlertMsg("查询发生异常，请确认查询条件和网络状态！");
+            }
+            finally
+            {
+                this.Invoke((EventHandler)delegate
+                {
+                    SysHelper.CloseLoading();
+                });
             }
 
         }
@@ -241,7 +249,7 @@ namespace Retail.PurchaseControls
             this.PanelLeft.Width = (this.Width - 10) / 2;
             this.PanelRight.Width = this.PanelLeft.Width;
             this.PanelCondition.Location = new Point((this.PanelHead.Width - this.PanelCondition.Width) / 2, 10);
-            this.PanelOrderList.Width = this.PanelCenter.Width - 2;
+            //this.PanelOrderList.Width = this.PanelCenter.Width - 2;
             this.labNoData.Location = new Point((this.PanelCenter.Width - this.labNoData.Width) / 2, (this.PanelCenter.Height - this.labNoData.Height) / 2);
             this.labTitleProductCode.Width = (this.PanelDetailTitle.Width - 250) / 2;
             this.labTitleProductName.Width = this.labTitleProductCode.Width;
@@ -331,9 +339,13 @@ namespace Retail.PurchaseControls
                 case "btnadd":
                     using (FrmPurchaseEdit add = new FrmPurchaseEdit(new Purchase()))
                     {
-                        if (((BaseMain)Global.MainForm).ShadeShowDialog(add) == DialogResult.OK)
+                        DialogResult result = ((BaseMain)Global.MainForm).ShadeShowDialog(add);
+                        if (result == DialogResult.OK)
                         {
-                            QueryData();
+                            queryThread = new Thread(QueryData);
+                            queryThread.IsBackground = true;
+                            queryThread.Start();
+                            SysHelper.ShowLoading();
                         }
                     }
                     break;
@@ -348,7 +360,7 @@ namespace Retail.PurchaseControls
             {
                 if (dal.DeletePurchaseOrder(Order))
                 {
-                    this.PanelOrderList.Controls.Remove(OrderSelected);
+                    //this.PanelOrderList.Controls.Remove(OrderSelected);
                     ListPurchaseOrder.Remove(OrderSelected);
                     this.labManufacturerName.Text = string.Empty;
                     this.labTelePhone.Text = string.Empty;

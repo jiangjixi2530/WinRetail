@@ -330,6 +330,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\LoadingClose.png" />
+    <None Include="Resources\Loading.gif" />
     <None Include="Resources\OrderAdd.png" />
     <None Include="Resources\radioUnCheck.png" />
     <None Include="Resources\radioChecked.png" />
@@ -343,7 +345,6 @@
     <None Include="Resources\btn_fy_nor.png" />
     <None Include="Resources\goods_search.png" />
     <None Include="Resources\Table_qy_prs.png" />
-    <None Include="Resources\Loading.gif" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client,KB2468871">

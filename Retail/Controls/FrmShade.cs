@@ -21,12 +21,12 @@ namespace Retail.Controls
 
         private void FrmShade_Load(object sender, EventArgs e)
         {
-            this.DialogResult = ShowForm.DialogResult;
             ShowForm.FormClosed += ShowForm_FormClosed;
         }
 
         void ShowForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            this.DialogResult = ShowForm.DialogResult;
             this.Close();
         }
 
