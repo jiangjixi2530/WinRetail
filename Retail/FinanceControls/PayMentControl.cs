@@ -129,25 +129,46 @@ namespace Retail.FinanceControls
             Thread threadQuery = new Thread(PurchaseDataQuery);
             threadQuery.IsBackground = true;
             threadQuery.Start();
+            SysHelper.ShowLoading();
         }
         /// <summary>
         /// 数据查询
         /// </summary>
         /// <param name="frm"></param>
-        private void PurchaseDataQuery(object frm)
+        private void PurchaseDataQuery()
         {
-            DateTime StartDate = Convert.ToDateTime(this.txtPurchaseStartDate.Text);
-            DateTime EndDate = Convert.ToDateTime(this.txtPurchaseEndDate.Text);
-            listUnPurchase = new BindingList<Purchase>(purchaseDal.GetUnPayPurchase(StartDate, EndDate));
-            listUnPayOrder = new List<UnPayOrder>();
-            foreach (Purchase item in listUnPurchase)
+            try
             {
-                UnPayOrder control = new UnPayOrder(item);
-                control.Width = PanelUnPayCenter.Width - 2;
-                listUnPayOrder.Add(control);
+                DateTime StartDate = Convert.ToDateTime(this.txtPurchaseStartDate.Text);
+                DateTime EndDate = Convert.ToDateTime(this.txtPurchaseEndDate.Text);
+                listUnPurchase = new BindingList<Purchase>(purchaseDal.GetUnPayPurchase(StartDate, EndDate));
+                listUnPayOrder = new List<UnPayOrder>();
+                foreach (Purchase item in listUnPurchase)
+                {
+                    UnPayOrder control = new UnPayOrder(item);
+                    control.Width = PanelUnPayCenter.Width - 2;
+                    listUnPayOrder.Add(control);
+                }
+                PanelUnPayCenter.ListPageControls = listUnPayOrder.OfType<Control>().ToList();
+                PanelUnPayCenter.RefreshPage();
+                this.Invoke((EventHandler)delegate
+                {
+                    this.labCurrentPage.Text = PanelUnPayCenter.CurrentPage.ToString();
+                    this.labTotalPage.Text = PanelUnPayCenter.TotalPage.ToString();
+                });
             }
-            PanelUnPayCenter.ListPageControls = listUnPayOrder.OfType<Control>().ToList();
-            PanelUnPayCenter.RefreshPage();
+            catch
+            {
+                SysHelper.AlertMsg("查询发生异常，请确认查询条件和网络状态！");
+            }
+            finally
+            {
+                this.Invoke((EventHandler)delegate
+                {
+                    SysHelper.CloseLoading();
+                });
+            }
+
         }
         #region 功能切换
         /// <summary>

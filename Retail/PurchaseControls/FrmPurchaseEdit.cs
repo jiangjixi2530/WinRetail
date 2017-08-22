@@ -38,6 +38,7 @@ namespace Retail.PurchaseControls
         //    set { _CurrentOrder = value; }
         //}
         Thread saveThread;
+        Thread loadProductSelectThread;
         public FrmPurchaseEdit(Purchase order)
         {
             InitializeComponent();
@@ -107,11 +108,21 @@ namespace Retail.PurchaseControls
             saveThread.IsBackground = true;
             saveThread.Start();
             Retail.Controls.FrmLoading.ManualClosed += LoadingManualClosed;
-            SysHelper.ShowLoading();
+            SysHelper.ShowLoading(saveThread);
         }
+        /// <summary>
+        /// 手动关闭加载框 将加载时所进行的线程强制关闭
+        /// </summary>
+        /// <param name="sender"></param>
         private void LoadingManualClosed(object sender)
         {
-            saveThread.Abort();
+            try
+            {
+                ((Thread)sender).Abort();
+            }
+            catch
+            {
+            }
         }
         /// <summary>
         /// 数据保存
@@ -203,20 +214,33 @@ namespace Retail.PurchaseControls
             ComputeTotal();
         }
 
-        private void FrmPurchaseEdit_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ((BaseMain)Global.MainForm).CloseShade();
-        }
-
         private void btnProductSelect_Click(object sender, EventArgs e)
         {
-            FrmProductSelect frmselect = new FrmProductSelect();
-            frmselect.StartPosition = FormStartPosition.Manual;
-            frmselect.Location = this.Location;
-            frmselect.SetOrderDetail(OrderType.Purchase, CurrentOrder, ListDetailSource);
-            frmselect.Size = this.Size;
-            frmselect.ShowDialog();
-            this.DataGridDetail.Refresh();
+            loadProductSelectThread = new Thread(LoadProductSelect);
+            loadProductSelectThread.IsBackground = true;
+            loadProductSelectThread.Start();
+            SysHelper.ShowLoading();
+        }
+        private void LoadProductSelect()
+        {
+            try
+            {
+                FrmProductSelect frmselect = new FrmProductSelect();
+                frmselect.StartPosition = FormStartPosition.Manual;
+                frmselect.Location = this.Location;
+                frmselect.SetOrderDetail(OrderType.Purchase, CurrentOrder, ListDetailSource);
+                frmselect.Size = this.Size;
+                this.Invoke((EventHandler)delegate
+                {
+                    SysHelper.CloseLoading();
+                    frmselect.ShowDialog();
+                    this.DataGridDetail.Refresh();
+                });
+            }
+            catch
+            {
+                SysHelper.CloseLoading();
+            }
         }
         private void DataGridDetail_KeyDown(object sender, KeyEventArgs e)
         {

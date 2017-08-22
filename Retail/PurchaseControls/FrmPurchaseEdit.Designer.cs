@@ -813,7 +813,6 @@
             this.Name = "FrmPurchaseEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmPurchaseEdit";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPurchaseEdit_FormClosing);
             this.Load += new System.EventHandler(this.FrmPurchaseEdit_Load);
             this.PanelHead.ResumeLayout(false);
             this.PanelHead.PerformLayout();

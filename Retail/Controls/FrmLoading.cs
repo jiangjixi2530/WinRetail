@@ -29,6 +29,10 @@ namespace Retail.Controls
         /// 手动关闭事件
         /// </summary>
         public static LoadingManualClosed ManualClosed { get; set; }
+        /// <summary>
+        /// 加载时需要传递的参数
+        /// </summary>
+        private object LoadParas = null;
         private FrmLoading()
         {
             InitializeComponent();
@@ -70,11 +74,12 @@ namespace Retail.Controls
             IsloadOpen = true;
             base.Show();
         }
-        public DialogResult ShowDialog()
+        public DialogResult ShowDialog(object sender = null)
         {
             if (IsloadOpen)
                 throw new Exception("窗体已经打开");
             IsloadOpen = true;
+            LoadParas = sender;
             return base.ShowDialog();
         }
         public void Close()
@@ -105,7 +110,7 @@ namespace Retail.Controls
         private void picClose_Click(object sender, EventArgs e)
         {
             if (ManualClosed != null)
-                ManualClosed(this);
+                ManualClosed(LoadParas);
             Close();
         }
     }

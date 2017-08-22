@@ -75,9 +75,9 @@
             // 
             this.PanelBorderBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(55)))));
             this.PanelBorderBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelBorderBottom.Location = new System.Drawing.Point(0, 758);
+            this.PanelBorderBottom.Location = new System.Drawing.Point(0, 790);
             this.PanelBorderBottom.Name = "PanelBorderBottom";
-            this.PanelBorderBottom.Size = new System.Drawing.Size(1366, 10);
+            this.PanelBorderBottom.Size = new System.Drawing.Size(1280, 10);
             this.PanelBorderBottom.TabIndex = 3;
             // 
             // PanelBoderTop
@@ -86,7 +86,7 @@
             this.PanelBoderTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBoderTop.Location = new System.Drawing.Point(0, 0);
             this.PanelBoderTop.Name = "PanelBoderTop";
-            this.PanelBoderTop.Size = new System.Drawing.Size(1366, 10);
+            this.PanelBoderTop.Size = new System.Drawing.Size(1280, 10);
             this.PanelBoderTop.TabIndex = 4;
             // 
             // PanelBoderLeft
@@ -95,16 +95,16 @@
             this.PanelBoderLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelBoderLeft.Location = new System.Drawing.Point(0, 10);
             this.PanelBoderLeft.Name = "PanelBoderLeft";
-            this.PanelBoderLeft.Size = new System.Drawing.Size(10, 748);
+            this.PanelBoderLeft.Size = new System.Drawing.Size(10, 780);
             this.PanelBoderLeft.TabIndex = 5;
             // 
             // PanelBoderRight
             // 
             this.PanelBoderRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(55)))));
             this.PanelBoderRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelBoderRight.Location = new System.Drawing.Point(1356, 10);
+            this.PanelBoderRight.Location = new System.Drawing.Point(1270, 10);
             this.PanelBoderRight.Name = "PanelBoderRight";
-            this.PanelBoderRight.Size = new System.Drawing.Size(10, 748);
+            this.PanelBoderRight.Size = new System.Drawing.Size(10, 780);
             this.PanelBoderRight.TabIndex = 6;
             // 
             // PanelLeft
@@ -115,7 +115,7 @@
             this.PanelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelLeft.Location = new System.Drawing.Point(10, 10);
             this.PanelLeft.Name = "PanelLeft";
-            this.PanelLeft.Size = new System.Drawing.Size(120, 748);
+            this.PanelLeft.Size = new System.Drawing.Size(120, 780);
             this.PanelLeft.TabIndex = 7;
             // 
             // panel_menu
@@ -127,7 +127,7 @@
             this.panel_menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_menu.Location = new System.Drawing.Point(0, 100);
             this.panel_menu.Name = "panel_menu";
-            this.panel_menu.Size = new System.Drawing.Size(110, 648);
+            this.panel_menu.Size = new System.Drawing.Size(110, 680);
             this.panel_menu.TabIndex = 8;
             // 
             // PanelReportStatistics
@@ -272,7 +272,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(110, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 748);
+            this.panel4.Size = new System.Drawing.Size(10, 780);
             this.panel4.TabIndex = 7;
             // 
             // panel2
@@ -284,7 +284,7 @@
             this.panel2.Location = new System.Drawing.Point(130, 10);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1226, 40);
+            this.panel2.Size = new System.Drawing.Size(1140, 40);
             this.panel2.TabIndex = 8;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -293,7 +293,7 @@
             this.panel1.Controls.Add(this.picMiniMize);
             this.panel1.Controls.Add(this.picClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1133, 0);
+            this.panel1.Location = new System.Drawing.Point(1047, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(93, 40);
             this.panel1.TabIndex = 2;
@@ -378,14 +378,14 @@
             this.PanelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBody.Location = new System.Drawing.Point(130, 50);
             this.PanelBody.Name = "PanelBody";
-            this.PanelBody.Size = new System.Drawing.Size(1226, 708);
+            this.PanelBody.Size = new System.Drawing.Size(1140, 740);
             this.PanelBody.TabIndex = 9;
             // 
             // BaseMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1280, 800);
             this.Controls.Add(this.PanelBody);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelLeft);
@@ -399,7 +399,6 @@
             this.Name = "BaseMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BaseMain";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BaseMain_FormClosed);
             this.Load += new System.EventHandler(this.BaseMain_Load);
             this.PanelLeft.ResumeLayout(false);

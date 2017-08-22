@@ -36,7 +36,8 @@ namespace Retail
         /// <summary>
         /// 显示加载框
         /// </summary>
-        public static void ShowLoading()
+        /// <param name="sender">需要携带的参数</param>
+        public static void ShowLoading(object sender = null)
         {
             //Thread show = new Thread(() =>
             //{
@@ -48,7 +49,7 @@ namespace Retail
             //show.IsBackground = true;
             //show.Start();
             //((BaseMain)Global.MainForm).ShadeShowDialog(FrmLoading.FrmLoad);
-            FrmLoading.FrmLoad.ShowDialog();
+            FrmLoading.FrmLoad.ShowDialog(sender);
         }
         public static void CloseLoading()
         {

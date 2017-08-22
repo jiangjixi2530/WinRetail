@@ -420,7 +420,7 @@ namespace Win.Soft.Retail.RetailDal
                             LEFT JOIN dbo.tb_PayMentDetail pd ON pd.PurchaseID=p.ID AND pd.IsSettle=1
                             LEFT JOIN(SELECT SUM(PayAmount) AS PaiedAmount,PurchaseID FROM dbo.tb_PayMentDetail Group BY PurchaseID) hp ON hp.PurchaseID=p.ID");
                 strSql.Append(" WHERE PurchaseDate BETWEEN '{0}' AND '{1}' ");
-                strSql.Append(" ORDER BY PurchaseDate ASC ");
+                strSql.Append(" ORDER BY PurchaseDate DESC ");
                 DataTable dt = DbHelperSQL.Query(string.Format(strSql.ToString(), StartDate, EndDate)).Tables[0];
                 return DataTableToList(dt);
             }

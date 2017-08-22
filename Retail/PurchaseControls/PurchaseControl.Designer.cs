@@ -108,8 +108,8 @@
             this.btnModify = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.PanelOrderList = new Retail.Controls.PagePanel();
             this.txtCondition = new Retail.Controls.WatermarkTextBox();
-            this.pagePanel1 = new Retail.Controls.PagePanel();
             this.PanelLeft.SuspendLayout();
             this.PanelCenter.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -144,7 +144,7 @@
             // 
             // PanelCenter
             // 
-            this.PanelCenter.Controls.Add(this.pagePanel1);
+            this.PanelCenter.Controls.Add(this.PanelOrderList);
             this.PanelCenter.Controls.Add(this.mcEndDate);
             this.PanelCenter.Controls.Add(this.mcStartDate);
             this.PanelCenter.Controls.Add(this.labNoData);
@@ -692,7 +692,7 @@
             // 
             this.labStockStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labStockStatus.AutoSize = true;
-            this.labStockStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(167)))));
+            this.labStockStatus.BackColor = System.Drawing.Color.Transparent;
             this.labStockStatus.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labStockStatus.ForeColor = System.Drawing.Color.Red;
             this.labStockStatus.Location = new System.Drawing.Point(286, 138);
@@ -725,7 +725,7 @@
             // labPayStatus
             // 
             this.labPayStatus.AutoSize = true;
-            this.labPayStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(167)))));
+            this.labPayStatus.BackColor = System.Drawing.Color.Transparent;
             this.labPayStatus.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.labPayStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.labPayStatus.Location = new System.Drawing.Point(72, 138);
@@ -1097,6 +1097,19 @@
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPaint);
             // 
+            // PanelOrderList
+            // 
+            this.PanelOrderList.BackColor = System.Drawing.Color.Transparent;
+            this.PanelOrderList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelOrderList.ListPageControls = null;
+            this.PanelOrderList.Location = new System.Drawing.Point(0, 0);
+            this.PanelOrderList.Name = "PanelOrderList";
+            this.PanelOrderList.PageMethod = BaseTool.PageMethodEnum.Normal;
+            this.PanelOrderList.Size = new System.Drawing.Size(429, 542);
+            this.PanelOrderList.SpaceLeftAndRight = 1;
+            this.PanelOrderList.SpaceUpAndLower = 1;
+            this.PanelOrderList.TabIndex = 115;
+            // 
             // txtCondition
             // 
             this.txtCondition.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1106,17 +1119,6 @@
             this.txtCondition.Size = new System.Drawing.Size(160, 19);
             this.txtCondition.TabIndex = 115;
             this.txtCondition.WaterMark = "订单号/供应商";
-            // 
-            // pagePanel1
-            // 
-            this.pagePanel1.ListPageControls = null;
-            this.pagePanel1.Location = new System.Drawing.Point(223, 218);
-            this.pagePanel1.Name = "pagePanel1";
-            this.pagePanel1.PageMethod = BaseTool.PageMethodEnum.Normal;
-            this.pagePanel1.Size = new System.Drawing.Size(200, 100);
-            this.pagePanel1.SpaceLeftAndRight = 10;
-            this.pagePanel1.SpaceUpAndLower = 10;
-            this.pagePanel1.TabIndex = 115;
             // 
             // PurchaseControl
             // 
@@ -1240,7 +1242,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button btnAdd;
-        private Controls.PagePanel pagePanel1;
+        private Controls.PagePanel PanelOrderList;
 
 
     }

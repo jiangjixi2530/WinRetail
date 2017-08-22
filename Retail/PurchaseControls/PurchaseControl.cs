@@ -79,22 +79,24 @@ namespace Retail.PurchaseControls
                 }
                 else
                 {
-                    this.BeginInvoke((EventHandler)delegate
-                    {
-                        //this.PanelOrderList.Controls.Clear();
-                    });
                     ListPurchaseOrder = new List<PurchaseOrder>();
                     ListPurchase = dal.GetDataList(this.txtStartDate.Text.Trim(), this.txtEndDate.Text.Trim() + " 23:59");
                     foreach (Purchase item in ListPurchase)// for (int i = ListPurchase.Count - 1; i >= 0; i--)
                     {
                         PurchaseOrder ordercontrol = new PurchaseOrder();
                         ordercontrol.CurrentItem = item;
-                        ordercontrol.Dock = DockStyle.Top;
+                        ordercontrol.Width = PanelOrderList.Width - 2;
+                       // ordercontrol.Dock = DockStyle.Top;
                         ordercontrol.PurchaseOrderClicked += new PurchaseOrder.PurchaseOrderClick((sender) => PurchaseOrderClick(sender));
-                       // this.PanelOrderList.Controls.Add(ordercontrol);
                         ListPurchaseOrder.Add(ordercontrol);
                     }
-                    ShowDataByPage(1);
+                    this.PanelOrderList.ListPageControls = ListPurchaseOrder.OfType<Control>().ToList();
+                    PanelOrderList.RefreshPage();
+                    this.Invoke((EventHandler)delegate
+                    {
+                        this.labCurrentPage.Text = PanelOrderList.CurrentPage.ToString();
+                        this.labTotalPage.Text = PanelOrderList.TotalPage.ToString();
+                    });
                 }
             }
             catch
@@ -121,41 +123,6 @@ namespace Retail.PurchaseControls
             OrderSelected.OrderBackColor = Color.LightBlue;// Color.FromArgb(222, 235, 255);
             ShowOrderDetail(OrderSelected.CurrentItem);
         }
-        /// <summary>
-        /// 显示数据
-        /// </summary>
-        private void ShowDataByPage(int Page)
-        {
-            int totalPage = 1, UseHeight = 0;
-            this.Invoke((EventHandler)delegate
-                   {
-                       if (ListPurchase.Count == 0)
-                           this.labNoData.Visible = true;
-                       else
-                           this.labNoData.Visible = false;
-                       for (int i = ListPurchaseOrder.Count - 1; i >= 0; i--)
-                       {
-                           if (PanelCenter.Height - UseHeight >= ListPurchaseOrder[i].Height)
-                           {
-                               UseHeight += ListPurchaseOrder[i].Height;
-                           }
-                           else
-                           {
-                               totalPage++;
-                               UseHeight = ListPurchaseOrder[i].Height;
-                           }
-                           if (totalPage == Page)
-                               ListPurchaseOrder[i].Visible = true;
-                           else
-                               ListPurchaseOrder[i].Visible = false;
-                       }
-                       this.labTotalPage.Text = totalPage.ToString();
-                       TotalPage = totalPage;
-                       this.labCurrentPage.Text = Page.ToString();
-                       CurrentPage = Page;
-                   });
-        }
-
         private void PanelPaint(object sender, PaintEventArgs e)
         {
             Panel panel = (Panel)sender;
@@ -177,18 +144,14 @@ namespace Retail.PurchaseControls
 
         private void btnPrePage_Click(object sender, EventArgs e)
         {
-            if (CurrentPage == 1)
-                return;
-            else
-                ShowDataByPage(CurrentPage - 1);
+            PanelOrderList.ShowControlByPage(PanelOrderList.CurrentPage - 1);
+            this.labCurrentPage.Text = PanelOrderList.CurrentPage.ToString();
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)
         {
-            if (CurrentPage == TotalPage)
-                return;
-            else
-                ShowDataByPage(CurrentPage + 1);
+            PanelOrderList.ShowControlByPage(PanelOrderList.CurrentPage + 1);
+            this.labCurrentPage.Text = PanelOrderList.CurrentPage.ToString();
         }
 
         private void picTime_Click(object sender, EventArgs e)
@@ -282,26 +245,22 @@ namespace Retail.PurchaseControls
             this.labCreateUser.Text = PurchaseOrder.CreateUser;
             if (PurchaseOrder.IsPay)
             {
-                this.labPayStatus.BackColor = Color.LightBlue;
-                this.labPayStatus.ForeColor = Color.White;
+                this.labPayStatus.ForeColor = Color.FromArgb(27, 130, 207);
                 this.labPayStatus.Text = "已付款";
             }
             else
             {
-                this.labPayStatus.BackColor = Color.Red;
-                this.labPayStatus.ForeColor = Color.Black;
+                this.labPayStatus.ForeColor = Color.Red;
                 this.labPayStatus.Text = "未付款";
             }
             if (PurchaseOrder.IsStockIn)
             {
-                this.labStockStatus.BackColor = Color.LightBlue;
-                this.labStockStatus.ForeColor = Color.White;
+                this.labStockStatus.ForeColor = Color.FromArgb(27, 130, 207);
                 this.labStockStatus.Text = "已入库";
             }
             else
             {
-                this.labStockStatus.BackColor = Color.Red;
-                this.labStockStatus.ForeColor = Color.Black;
+                this.labStockStatus.ForeColor = Color.Red;
                 this.labStockStatus.Text = "未入库";
             }
             List<PurchaseDetail> ListDetail = (new PurchaseDetailDal()).GetPurchaseDetail(PurchaseOrder.ID);

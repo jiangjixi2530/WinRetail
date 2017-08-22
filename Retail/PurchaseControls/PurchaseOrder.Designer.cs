@@ -63,6 +63,7 @@
             this.PanelOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PanelOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelOrder.Location = new System.Drawing.Point(0, 0);
+            this.PanelOrder.MaximumSize = new System.Drawing.Size(0, 70);
             this.PanelOrder.Name = "PanelOrder";
             this.PanelOrder.Size = new System.Drawing.Size(400, 70);
             this.PanelOrder.TabIndex = 4;

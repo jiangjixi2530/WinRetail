@@ -54,7 +54,7 @@ namespace Retail.PurchaseControls
 
         private void PurchaseOrder_Load(object sender, EventArgs e)
         {
-            this.MaximumSize = new Size(0, 70);
+            //this.MaximumSize = new Size(0, 70);
         }
         /// <summary>
         /// 显示详情
