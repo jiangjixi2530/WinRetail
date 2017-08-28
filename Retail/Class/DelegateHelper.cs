@@ -17,6 +17,11 @@ namespace Retail
     /// <param name="sender"></param>
     public delegate void SinglePayMentEvent(UnPayOrder sender);
     /// <summary>
+    /// 未结清款项选择变化事件
+    /// </summary>
+    /// <param name="sender"></param>
+    public delegate void UnPayOrderSelectChange(UnPayOrder sender);
+    /// <summary>
     /// 加载框手动关闭
     /// </summary>
     public delegate void LoadingManualClosed(object sender);

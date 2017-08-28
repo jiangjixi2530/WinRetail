@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelPurchaseUnPay = new System.Windows.Forms.Panel();
+            this.PanelUnPayCenter = new Retail.Controls.PagePanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picSearch = new System.Windows.Forms.PictureBox();
+            this.txtCondition = new Retail.Controls.WatermarkTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labTotalPage = new System.Windows.Forms.Label();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPrePage = new System.Windows.Forms.Button();
             this.labCurrentPage = new System.Windows.Forms.Label();
             this.PanelUnPayHead = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBatchPayed = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.PanelUnPayCondition = new System.Windows.Forms.Panel();
             this.btnQuery = new System.Windows.Forms.Button();
@@ -57,12 +59,24 @@
             this.mcPurchaseStartDate = new System.Windows.Forms.MonthCalendar();
             this.panelPayMentEdit = new System.Windows.Forms.Panel();
             this.DataGridDetail = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurchaseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaidAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayableAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIsSettle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.PanelDetailTitle = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -82,6 +96,7 @@
             this.txtPayableAmount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.cmbPayerID = new Retail.Controls.RetailComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtPayDate = new System.Windows.Forms.TextBox();
@@ -94,6 +109,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbManufacturerID = new Retail.Controls.RetailComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -102,22 +118,6 @@
             this.panelFunction = new System.Windows.Forms.Panel();
             this.labPaied = new System.Windows.Forms.Label();
             this.labUnPay = new System.Windows.Forms.Label();
-            this.PanelUnPayCenter = new Retail.Controls.PagePanel();
-            this.txtCondition = new Retail.Controls.WatermarkTextBox();
-            this.cmbPayerID = new Retail.Controls.RetailComboBox();
-            this.cmbManufacturerID = new Retail.Controls.RetailComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurchaseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPaidAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPayableAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPayAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIsSettle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelPurchaseUnPay.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -160,6 +160,19 @@
             this.PanelPurchaseUnPay.Size = new System.Drawing.Size(225, 574);
             this.PanelPurchaseUnPay.TabIndex = 0;
             // 
+            // PanelUnPayCenter
+            // 
+            this.PanelUnPayCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelUnPayCenter.ListPageControls = null;
+            this.PanelUnPayCenter.Location = new System.Drawing.Point(0, 84);
+            this.PanelUnPayCenter.Name = "PanelUnPayCenter";
+            this.PanelUnPayCenter.PageMethod = BaseTool.PageMethodEnum.Normal;
+            this.PanelUnPayCenter.Size = new System.Drawing.Size(225, 444);
+            this.PanelUnPayCenter.SpaceLeftAndRight = 1;
+            this.PanelUnPayCenter.SpaceUpAndLower = 1;
+            this.PanelUnPayCenter.TabIndex = 118;
+            this.PanelUnPayCenter.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel1);
@@ -194,6 +207,16 @@
             this.picSearch.Size = new System.Drawing.Size(20, 20);
             this.picSearch.TabIndex = 116;
             this.picSearch.TabStop = false;
+            // 
+            // txtCondition
+            // 
+            this.txtCondition.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCondition.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.txtCondition.Location = new System.Drawing.Point(1, 6);
+            this.txtCondition.Name = "txtCondition";
+            this.txtCondition.Size = new System.Drawing.Size(170, 19);
+            this.txtCondition.TabIndex = 115;
+            this.txtCondition.WaterMark = "订单号/供应商";
             // 
             // label1
             // 
@@ -267,7 +290,7 @@
             // 
             // PanelUnPayHead
             // 
-            this.PanelUnPayHead.Controls.Add(this.button1);
+            this.PanelUnPayHead.Controls.Add(this.btnBatchPayed);
             this.PanelUnPayHead.Controls.Add(this.label15);
             this.PanelUnPayHead.Controls.Add(this.PanelUnPayCondition);
             this.PanelUnPayHead.Controls.Add(this.label27);
@@ -279,23 +302,24 @@
             this.PanelUnPayHead.TabIndex = 12;
             this.PanelUnPayHead.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
             // 
-            // button1
+            // btnBatchPayed
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button1.BackgroundImage = global::Retail.Properties.Resources.Pic_btnSelect_nor;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(140, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 123;
-            this.button1.Text = "批量付款";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBatchPayed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBatchPayed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnBatchPayed.BackgroundImage = global::Retail.Properties.Resources.Pic_btnSelect_nor;
+            this.btnBatchPayed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBatchPayed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBatchPayed.FlatAppearance.BorderSize = 0;
+            this.btnBatchPayed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBatchPayed.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnBatchPayed.ForeColor = System.Drawing.Color.White;
+            this.btnBatchPayed.Location = new System.Drawing.Point(140, 7);
+            this.btnBatchPayed.Name = "btnBatchPayed";
+            this.btnBatchPayed.Size = new System.Drawing.Size(75, 30);
+            this.btnBatchPayed.TabIndex = 123;
+            this.btnBatchPayed.Text = "批量付款";
+            this.btnBatchPayed.UseVisualStyleBackColor = true;
+            this.btnBatchPayed.Click += new System.EventHandler(this.btnBatchPayed_Click);
             // 
             // label15
             // 
@@ -480,8 +504,8 @@
             this.DataGridDetail.AllowUserToDeleteRows = false;
             this.DataGridDetail.AllowUserToResizeColumns = false;
             this.DataGridDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
-            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Snow;
+            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridDetail.BackgroundColor = System.Drawing.Color.White;
             this.DataGridDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
@@ -500,14 +524,14 @@
             this.colIsSettle,
             this.colRemark});
             this.DataGridDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridDetail.Location = new System.Drawing.Point(2, 274);
             this.DataGridDetail.MultiSelect = false;
@@ -519,6 +543,91 @@
             this.DataGridDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridDetail.Size = new System.Drawing.Size(520, 304);
             this.DataGridDetail.TabIndex = 120;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID";
+            this.Column1.HeaderText = "主键";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "PayMentID";
+            this.Column2.HeaderText = "主表主键";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PurchaseID";
+            this.Column3.HeaderText = "采购单ID";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // colProductCode
+            // 
+            this.colProductCode.DataPropertyName = "PurchaseCode";
+            this.colProductCode.HeaderText = "采购单号";
+            this.colProductCode.Name = "colProductCode";
+            this.colProductCode.ReadOnly = true;
+            // 
+            // colProductName
+            // 
+            this.colProductName.DataPropertyName = "PurchaseDate";
+            this.colProductName.HeaderText = "采购日期";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.ReadOnly = true;
+            this.colProductName.Width = 85;
+            // 
+            // colPurchaseAmount
+            // 
+            this.colPurchaseAmount.DataPropertyName = "PurchaseAmount";
+            this.colPurchaseAmount.HeaderText = "采购金额";
+            this.colPurchaseAmount.Name = "colPurchaseAmount";
+            this.colPurchaseAmount.ReadOnly = true;
+            this.colPurchaseAmount.Width = 65;
+            // 
+            // colPaidAmount
+            // 
+            this.colPaidAmount.HeaderText = "已付金额";
+            this.colPaidAmount.Name = "colPaidAmount";
+            this.colPaidAmount.ReadOnly = true;
+            this.colPaidAmount.Width = 65;
+            // 
+            // colPayableAmount
+            // 
+            this.colPayableAmount.DataPropertyName = "PayableAmount";
+            this.colPayableAmount.HeaderText = "应付金额";
+            this.colPayableAmount.Name = "colPayableAmount";
+            this.colPayableAmount.ReadOnly = true;
+            this.colPayableAmount.Width = 65;
+            // 
+            // colPayAmount
+            // 
+            this.colPayAmount.DataPropertyName = "PayAmount";
+            this.colPayAmount.HeaderText = "实付金额";
+            this.colPayAmount.Name = "colPayAmount";
+            this.colPayAmount.ReadOnly = true;
+            this.colPayAmount.Width = 65;
+            // 
+            // colIsSettle
+            // 
+            this.colIsSettle.DataPropertyName = "IsSettle";
+            this.colIsSettle.HeaderText = "是否结清";
+            this.colIsSettle.Name = "colIsSettle";
+            this.colIsSettle.ReadOnly = true;
+            this.colIsSettle.Width = 70;
+            // 
+            // colRemark
+            // 
+            this.colRemark.DataPropertyName = "Remark";
+            this.colRemark.HeaderText = "备注";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.ReadOnly = true;
             // 
             // panel12
             // 
@@ -605,6 +714,18 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(520, 40);
             this.panel13.TabIndex = 116;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label14.Location = new System.Drawing.Point(510, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(10, 40);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "备注";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -839,6 +960,19 @@
             this.panel6.TabIndex = 121;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
             // 
+            // cmbPayerID
+            // 
+            this.cmbPayerID.DataSouceType = Retail.Controls.DataSouceTypeEnum.User;
+            this.cmbPayerID.DisplayMember = "Name";
+            this.cmbPayerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbPayerID.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.cmbPayerID.FormattingEnabled = true;
+            this.cmbPayerID.Location = new System.Drawing.Point(3, 1);
+            this.cmbPayerID.Name = "cmbPayerID";
+            this.cmbPayerID.Size = new System.Drawing.Size(114, 28);
+            this.cmbPayerID.TabIndex = 124;
+            this.cmbPayerID.ValueMember = "ID";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -975,6 +1109,19 @@
             this.panel2.TabIndex = 122;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
             // 
+            // cmbManufacturerID
+            // 
+            this.cmbManufacturerID.DataSouceType = Retail.Controls.DataSouceTypeEnum.User;
+            this.cmbManufacturerID.DisplayMember = "Name";
+            this.cmbManufacturerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbManufacturerID.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.cmbManufacturerID.FormattingEnabled = true;
+            this.cmbManufacturerID.Location = new System.Drawing.Point(4, 1);
+            this.cmbManufacturerID.Name = "cmbManufacturerID";
+            this.cmbManufacturerID.Size = new System.Drawing.Size(114, 28);
+            this.cmbManufacturerID.TabIndex = 123;
+            this.cmbManufacturerID.ValueMember = "ID";
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -1059,152 +1206,6 @@
             this.labUnPay.Text = "进行中";
             this.labUnPay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labUnPay.Click += new System.EventHandler(this.labUnPay_Click);
-            // 
-            // PanelUnPayCenter
-            // 
-            this.PanelUnPayCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelUnPayCenter.ListPageControls = null;
-            this.PanelUnPayCenter.Location = new System.Drawing.Point(0, 84);
-            this.PanelUnPayCenter.Name = "PanelUnPayCenter";
-            this.PanelUnPayCenter.PageMethod = BaseTool.PageMethodEnum.Normal;
-            this.PanelUnPayCenter.Size = new System.Drawing.Size(225, 444);
-            this.PanelUnPayCenter.SpaceLeftAndRight = 1;
-            this.PanelUnPayCenter.SpaceUpAndLower = 1;
-            this.PanelUnPayCenter.TabIndex = 118;
-            this.PanelUnPayCenter.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelAll_Paint);
-            // 
-            // txtCondition
-            // 
-            this.txtCondition.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCondition.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.txtCondition.Location = new System.Drawing.Point(1, 6);
-            this.txtCondition.Name = "txtCondition";
-            this.txtCondition.Size = new System.Drawing.Size(170, 19);
-            this.txtCondition.TabIndex = 115;
-            this.txtCondition.WaterMark = "订单号/供应商";
-            // 
-            // cmbPayerID
-            // 
-            this.cmbPayerID.DataSouceType = Retail.Controls.DataSouceTypeEnum.User;
-            this.cmbPayerID.DisplayMember = "Name";
-            this.cmbPayerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbPayerID.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.cmbPayerID.FormattingEnabled = true;
-            this.cmbPayerID.Location = new System.Drawing.Point(3, 1);
-            this.cmbPayerID.Name = "cmbPayerID";
-            this.cmbPayerID.Size = new System.Drawing.Size(114, 28);
-            this.cmbPayerID.TabIndex = 124;
-            this.cmbPayerID.ValueMember = "ID";
-            // 
-            // cmbManufacturerID
-            // 
-            this.cmbManufacturerID.DataSouceType = Retail.Controls.DataSouceTypeEnum.User;
-            this.cmbManufacturerID.DisplayMember = "Name";
-            this.cmbManufacturerID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbManufacturerID.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.cmbManufacturerID.FormattingEnabled = true;
-            this.cmbManufacturerID.Location = new System.Drawing.Point(4, 1);
-            this.cmbManufacturerID.Name = "cmbManufacturerID";
-            this.cmbManufacturerID.Size = new System.Drawing.Size(114, 28);
-            this.cmbManufacturerID.TabIndex = 123;
-            this.cmbManufacturerID.ValueMember = "ID";
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label14.Location = new System.Drawing.Point(510, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(10, 40);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "备注";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "主键";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "PayMentID";
-            this.Column2.HeaderText = "主表主键";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "PurchaseID";
-            this.Column3.HeaderText = "采购单ID";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
-            // 
-            // colProductCode
-            // 
-            this.colProductCode.DataPropertyName = "PurchaseCode";
-            this.colProductCode.HeaderText = "采购单号";
-            this.colProductCode.Name = "colProductCode";
-            this.colProductCode.ReadOnly = true;
-            // 
-            // colProductName
-            // 
-            this.colProductName.DataPropertyName = "PurchaseDate";
-            this.colProductName.HeaderText = "采购日期";
-            this.colProductName.Name = "colProductName";
-            this.colProductName.ReadOnly = true;
-            this.colProductName.Width = 85;
-            // 
-            // colPurchaseAmount
-            // 
-            this.colPurchaseAmount.DataPropertyName = "PurchaseAmount";
-            this.colPurchaseAmount.HeaderText = "采购金额";
-            this.colPurchaseAmount.Name = "colPurchaseAmount";
-            this.colPurchaseAmount.ReadOnly = true;
-            this.colPurchaseAmount.Width = 65;
-            // 
-            // colPaidAmount
-            // 
-            this.colPaidAmount.HeaderText = "已付金额";
-            this.colPaidAmount.Name = "colPaidAmount";
-            this.colPaidAmount.ReadOnly = true;
-            this.colPaidAmount.Width = 65;
-            // 
-            // colPayableAmount
-            // 
-            this.colPayableAmount.DataPropertyName = "PayableAmount";
-            this.colPayableAmount.HeaderText = "应付金额";
-            this.colPayableAmount.Name = "colPayableAmount";
-            this.colPayableAmount.ReadOnly = true;
-            this.colPayableAmount.Width = 65;
-            // 
-            // colPayAmount
-            // 
-            this.colPayAmount.DataPropertyName = "PayAmount";
-            this.colPayAmount.HeaderText = "实付金额";
-            this.colPayAmount.Name = "colPayAmount";
-            this.colPayAmount.ReadOnly = true;
-            this.colPayAmount.Width = 65;
-            // 
-            // colIsSettle
-            // 
-            this.colIsSettle.DataPropertyName = "IsSettle";
-            this.colIsSettle.HeaderText = "是否结清";
-            this.colIsSettle.Name = "colIsSettle";
-            this.colIsSettle.ReadOnly = true;
-            this.colIsSettle.Width = 70;
-            // 
-            // colRemark
-            // 
-            this.colRemark.DataPropertyName = "Remark";
-            this.colRemark.HeaderText = "备注";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.ReadOnly = true;
             // 
             // PayMentControl
             // 
@@ -1294,7 +1295,7 @@
         private System.Windows.Forms.Button btnPrePage;
         private System.Windows.Forms.Label labCurrentPage;
         private Controls.PagePanel PanelUnPayCenter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBatchPayed;
         private System.Windows.Forms.Panel panelDataList;
         private System.Windows.Forms.Panel panelFunction;
         private System.Windows.Forms.Label labUnPay;

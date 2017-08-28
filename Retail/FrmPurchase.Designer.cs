@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPurchase));
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.labPayMent = new System.Windows.Forms.Label();
             this.labPurchase = new System.Windows.Forms.Label();
@@ -90,7 +91,7 @@
             // purchaseControl1
             // 
             this.purchaseControl1.BackColor = System.Drawing.Color.White;
-            this.purchaseControl1.Location = new System.Drawing.Point(156, 20);
+            this.purchaseControl1.Location = new System.Drawing.Point(6, 3);
             this.purchaseControl1.Name = "purchaseControl1";
             this.purchaseControl1.Size = new System.Drawing.Size(900, 640);
             this.purchaseControl1.TabIndex = 0;

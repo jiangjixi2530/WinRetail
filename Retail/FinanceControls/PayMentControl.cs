@@ -29,9 +29,17 @@ namespace Retail.FinanceControls
         /// </summary>
         private List<UnPayOrder> listUnPayOrder = new List<UnPayOrder>();
         /// <summary>
+        /// 选中的采购单
+        /// </summary>
+        private List<UnPayOrder> listSelectedOrder = new List<UnPayOrder>();
+        /// <summary>
         /// 单笔付款事件
         /// </summary>
         public SinglePayMentEvent SinglePayEvent { get; set; }
+        /// <summary>
+        /// 未结清款项选择变化事件
+        /// </summary>
+        public UnPayOrderSelectChange UnPayOrderSelectChangeEvent { get; set; }
         public PayMentControl()
         {
             InitializeComponent();
@@ -51,7 +59,15 @@ namespace Retail.FinanceControls
             this.PanelPurchaseUnPay.Visible = true;
             this.panelPurchasePaid.Visible = false;
             SinglePayEvent += SinglePayed;
+            UnPayOrderSelectChangeEvent += UnPayOrderSelectChanged;
             this.DataGridDetail.AutoGenerateColumns = false;
+        }
+        private void UnPayOrderSelectChanged(UnPayOrder unPay)
+        {
+            if (unPay.IsSelected)
+                listSelectedOrder.Add(unPay);
+            else
+                listSelectedOrder.Remove(unPay);
         }
         /// <summary>
         /// 单笔付款
@@ -79,7 +95,7 @@ namespace Retail.FinanceControls
             SetDetail(payment, payMentDetailList);
         }
         private void BatchPayed(List<UnPayOrder> unPayList)
-        {        
+        {
             PayMent payment = new PayMent();
             payment.PayDate = DateTime.Now;
             payment.PayerID = Global.UserID;
@@ -87,7 +103,7 @@ namespace Retail.FinanceControls
             payment.PayableAmount = unPayList.Sum(x => x.UnPayOrderInfo.UnPayAmount);
             payment.PayAmount = payment.PayableAmount;
             List<PayMentDetail> payMentDetailList = new List<PayMentDetail>();
-            foreach(UnPayOrder item in unPayList)
+            foreach (UnPayOrder item in unPayList)
             {
                 PayMentDetail paymentdetail = new PayMentDetail();
                 paymentdetail.PurchaseCode = item.UnPayOrderInfo.Code;
@@ -101,7 +117,20 @@ namespace Retail.FinanceControls
                 payMentDetailList.Add(paymentdetail);
             }
             SetDetail(payment, payMentDetailList);
-                
+
+        }
+
+        private void btnBatchPayed_Click(object sender, EventArgs e)
+        {
+            if (listSelectedOrder.Count>0)
+            {
+                string  ManufacturerID=listSelectedOrder
+                foreach (UnPayOrder order in listSelectedOrder)
+                {
+
+                }
+            }
+            BatchPayed(listSelectedOrder);
         }
         /// <summary>
         /// 设置明细
@@ -112,7 +141,7 @@ namespace Retail.FinanceControls
         {
             this.cmbManufacturerID.SelectedValue = payMent.ManufacturerID;
             this.txtCode.Text = string.IsNullOrEmpty(payMent.Code) ? SysHelper.GetAutoCode(AutoCodeType.PayMent) : payMent.Code;
-            this.cmbPayerID.SelectedValue = payMent.PayerID==0 ? Global.UserID : payMent.PayerID;
+            this.cmbPayerID.SelectedValue = payMent.PayerID == 0 ? Global.UserID : payMent.PayerID;
             this.txtPayDate.Text = string.IsNullOrEmpty(payMent.PayDate.ToString()) ? DateTime.Now.ToString("yyyy-MM-dd") : payMent.PayDate.ToString("yyyy-MM-dd");
             this.txtPayableAmount.Text = payMent.PayableAmount.ToString();
             this.txtPayAmount.Text = payMent.PayAmount.ToString();
