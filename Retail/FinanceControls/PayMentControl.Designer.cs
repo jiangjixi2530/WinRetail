@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelPurchaseUnPay = new System.Windows.Forms.Panel();
             this.PanelUnPayCenter = new Retail.Controls.PagePanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -72,8 +72,8 @@
             this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.btnModify = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSure = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.PanelDetailTitle = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -492,7 +492,7 @@
             this.panelPayMentEdit.Controls.Add(this.panel21);
             this.panelPayMentEdit.Controls.Add(this.panel20);
             this.panelPayMentEdit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelPayMentEdit.Location = new System.Drawing.Point(447, 0);
+            this.panelPayMentEdit.Location = new System.Drawing.Point(560, 0);
             this.panelPayMentEdit.Name = "panelPayMentEdit";
             this.panelPayMentEdit.Size = new System.Drawing.Size(522, 624);
             this.panelPayMentEdit.TabIndex = 1;
@@ -504,8 +504,8 @@
             this.DataGridDetail.AllowUserToDeleteRows = false;
             this.DataGridDetail.AllowUserToResizeColumns = false;
             this.DataGridDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Snow;
-            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
+            this.DataGridDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridDetail.BackgroundColor = System.Drawing.Color.White;
             this.DataGridDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
@@ -524,14 +524,14 @@
             this.colIsSettle,
             this.colRemark});
             this.DataGridDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridDetail.DefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridDetail.Location = new System.Drawing.Point(2, 274);
             this.DataGridDetail.MultiSelect = false;
@@ -628,6 +628,7 @@
             this.colRemark.HeaderText = "备注";
             this.colRemark.Name = "colRemark";
             this.colRemark.ReadOnly = true;
+            this.colRemark.Width = 20;
             // 
             // panel12
             // 
@@ -643,49 +644,51 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.Controls.Add(this.btnModify);
-            this.panel11.Controls.Add(this.btnDelete);
+            this.panel11.Controls.Add(this.btnSure);
+            this.panel11.Controls.Add(this.btnPrint);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel11.Location = new System.Drawing.Point(0, 578);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(522, 46);
             this.panel11.TabIndex = 118;
             // 
-            // btnModify
+            // btnSure
             // 
-            this.btnModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModify.BackColor = System.Drawing.Color.Transparent;
-            this.btnModify.BackgroundImage = global::Retail.Properties.Resources.Pic_btnSelect_nor;
-            this.btnModify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModify.FlatAppearance.BorderSize = 0;
-            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModify.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnModify.ForeColor = System.Drawing.Color.White;
-            this.btnModify.Location = new System.Drawing.Point(438, 6);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(70, 30);
-            this.btnModify.TabIndex = 4;
-            this.btnModify.Text = "修改";
-            this.btnModify.UseVisualStyleBackColor = false;
+            this.btnSure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSure.BackColor = System.Drawing.Color.Transparent;
+            this.btnSure.BackgroundImage = global::Retail.Properties.Resources.Pic_btnSelect_nor;
+            this.btnSure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSure.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSure.FlatAppearance.BorderSize = 0;
+            this.btnSure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSure.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnSure.ForeColor = System.Drawing.Color.White;
+            this.btnSure.Location = new System.Drawing.Point(438, 6);
+            this.btnSure.Name = "btnSure";
+            this.btnSure.Size = new System.Drawing.Size(70, 30);
+            this.btnSure.TabIndex = 4;
+            this.btnSure.Text = "保存";
+            this.btnSure.UseVisualStyleBackColor = false;
+            this.btnSure.Click += new System.EventHandler(this.btnSure_Click);
             // 
-            // btnDelete
+            // btnPrint
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BackgroundImage = global::Retail.Properties.Resources.Pic_btnSelect_prs;
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(348, 6);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(70, 30);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "打印";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BackgroundImage = global::Retail.Properties.Resources.Pic_btnSelect_prs;
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Enabled = false;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(348, 6);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(70, 30);
+            this.btnPrint.TabIndex = 3;
+            this.btnPrint.Text = "打印";
+            this.btnPrint.UseVisualStyleBackColor = false;
             // 
             // PanelDetailTitle
             // 
@@ -1217,7 +1220,7 @@
             this.Controls.Add(this.mcPurchaseEndDate);
             this.Controls.Add(this.mcPurchaseStartDate);
             this.Name = "PayMentControl";
-            this.Size = new System.Drawing.Size(969, 624);
+            this.Size = new System.Drawing.Size(1082, 624);
             this.Load += new System.EventHandler(this.FrmPayMent_Load);
             this.SizeChanged += new System.EventHandler(this.PayMentControl_SizeChanged);
             this.PanelPurchaseUnPay.ResumeLayout(false);
@@ -1336,8 +1339,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSure;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridView DataGridDetail;
         private System.Windows.Forms.Panel panelPurchasePaid;
         private System.Windows.Forms.Label label13;

@@ -399,6 +399,7 @@
             this.Name = "BaseMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BaseMain";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BaseMain_FormClosed);
             this.Load += new System.EventHandler(this.BaseMain_Load);
             this.PanelLeft.ResumeLayout(false);

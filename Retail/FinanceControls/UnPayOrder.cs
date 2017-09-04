@@ -88,6 +88,19 @@ namespace Retail.FinanceControls
         private void btnSelected_Click(object sender, EventArgs e)
         {
             IsSelected = !isSelected;
+            try
+            {
+                if (this.Parent.Parent.Parent.Parent is PayMentControl)
+                {
+                    PayMentControl payMent = (PayMentControl)this.Parent.Parent.Parent.Parent;
+                    if (payMent.UnPayOrderSelectChangeEvent != null)
+                        payMent.UnPayOrderSelectChangeEvent(this);
+                }
+            }
+            catch
+            {
+
+            }
         }
         /// <summary>
         /// 单笔付款

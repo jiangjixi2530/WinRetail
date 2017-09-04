@@ -122,13 +122,21 @@ namespace Retail.FinanceControls
 
         private void btnBatchPayed_Click(object sender, EventArgs e)
         {
-            if (listSelectedOrder.Count>0)
+            if (listSelectedOrder.Count > 0)
             {
-                string  ManufacturerID=listSelectedOrder
+                int ManufacturerID = listSelectedOrder[0].UnPayOrderInfo.ManufacturerID;
                 foreach (UnPayOrder order in listSelectedOrder)
                 {
-
+                    if (order.UnPayOrderInfo.ManufacturerID != ManufacturerID)
+                    {
+                        SysHelper.AlertMsg("只有相同供应商才能批量付款");
+                        return;
+                    }
                 }
+            }
+            else
+            {
+                return;
             }
             BatchPayed(listSelectedOrder);
         }
@@ -147,6 +155,16 @@ namespace Retail.FinanceControls
             this.txtPayAmount.Text = payMent.PayAmount.ToString();
             this.txtRemark.Text = payMent.Remark;
             this.DataGridDetail.DataSource = new BindingList<PayMentDetail>(listPayMentDetail);
+            if(payMent.ID>0)
+            {
+                this.btnSure.Text = "修改";
+                this.btnPrint.Visible = true;
+            }
+            else
+            {
+                this.btnPrint.Visible = false;
+                this.btnSure.Text = "保存";
+            }
         }
         /// <summary>
         /// 查询点击事件
@@ -319,6 +337,16 @@ namespace Retail.FinanceControls
                     this.txtPurchaseEndDate.Text = mcPurchaseEndDate.SelectionStart.ToString("yyyy-MM-dd");
                     break;
             }
+        }
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnSure_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

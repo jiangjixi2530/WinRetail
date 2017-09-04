@@ -34,8 +34,10 @@ namespace Retail
             if (label == selectedLabel)
                 return;
             selectedLabel.Image = null;
+            selectedLabel.ForeColor = Color.Black;
             label.Image = Retail.Properties.Resources.Table_qy_prs;
             selectedLabel = label;
+            selectedLabel.ForeColor = Color.FromArgb(27, 130, 207);
             showedControl.Visible = false;
             switch (label.Name.ToLower())
             {
