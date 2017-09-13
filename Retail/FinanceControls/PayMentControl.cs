@@ -17,6 +17,10 @@ namespace Retail.FinanceControls
     public partial class PayMentControl : UserControl
     {
         /// <summary>
+        /// 编辑类型
+        /// </summary>
+        private EditTypeEnum editType = EditTypeEnum.Add;
+        /// <summary>
         /// 未结清的采购单信息
         /// </summary>
         private BindingList<Purchase> listUnPurchase;
@@ -62,6 +66,11 @@ namespace Retail.FinanceControls
             UnPayOrderSelectChangeEvent += UnPayOrderSelectChanged;
             this.DataGridDetail.AutoGenerateColumns = false;
         }
+        #region 未付款
+        /// <summary>
+        /// 未付款采购单点击事件
+        /// </summary>
+        /// <param name="unPay"></param>
         private void UnPayOrderSelectChanged(UnPayOrder unPay)
         {
             if (unPay.IsSelected)
@@ -94,6 +103,10 @@ namespace Retail.FinanceControls
             payMentDetailList.Add(paymentdetail);
             SetDetail(payment, payMentDetailList);
         }
+        /// <summary>
+        /// 批量付款
+        /// </summary>
+        /// <param name="unPayList"></param>
         private void BatchPayed(List<UnPayOrder> unPayList)
         {
             PayMent payment = new PayMent();
@@ -119,7 +132,11 @@ namespace Retail.FinanceControls
             SetDetail(payment, payMentDetailList);
 
         }
-
+        /// <summary>
+        /// 批量付款按钮点击
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBatchPayed_Click(object sender, EventArgs e)
         {
             if (listSelectedOrder.Count > 0)
@@ -148,14 +165,14 @@ namespace Retail.FinanceControls
         private void SetDetail(PayMent payMent, List<PayMentDetail> listPayMentDetail)
         {
             this.cmbManufacturerID.SelectedValue = payMent.ManufacturerID;
-            this.txtCode.Text = string.IsNullOrEmpty(payMent.Code) ? SysHelper.GetAutoCode(AutoCodeType.PayMent) : payMent.Code;
+            this.txtCode.Text = string.IsNullOrEmpty(payMent.Code) ? SysHelper.GetAutoCode(AutoCodeTypeEnum.PayMent) : payMent.Code;
             this.cmbPayerID.SelectedValue = payMent.PayerID == 0 ? Global.UserID : payMent.PayerID;
             this.txtPayDate.Text = string.IsNullOrEmpty(payMent.PayDate.ToString()) ? DateTime.Now.ToString("yyyy-MM-dd") : payMent.PayDate.ToString("yyyy-MM-dd");
             this.txtPayableAmount.Text = payMent.PayableAmount.ToString();
             this.txtPayAmount.Text = payMent.PayAmount.ToString();
             this.txtRemark.Text = payMent.Remark;
             this.DataGridDetail.DataSource = new BindingList<PayMentDetail>(listPayMentDetail);
-            if(payMent.ID>0)
+            if (payMent.ID > 0)
             {
                 this.btnSure.Text = "修改";
                 this.btnPrint.Visible = true;
@@ -217,6 +234,7 @@ namespace Retail.FinanceControls
             }
 
         }
+        #endregion
         #region 功能切换
         /// <summary>
         /// 未结清账款
@@ -225,6 +243,7 @@ namespace Retail.FinanceControls
         /// <param name="e"></param>
         private void labUnPay_Click(object sender, EventArgs e)
         {
+            editType = EditTypeEnum.Add;
             this.PanelPurchaseUnPay.Dock = DockStyle.Fill;
             this.PanelPurchaseUnPay.Visible = true;
             this.panelPurchasePaid.Visible = false;
@@ -240,6 +259,7 @@ namespace Retail.FinanceControls
         /// <param name="e"></param>
         private void labPaied_Click(object sender, EventArgs e)
         {
+            editType = EditTypeEnum.Update;
             this.panelPurchasePaid.Dock = DockStyle.Fill;
             this.panelPurchasePaid.Visible = true;
             this.PanelPurchaseUnPay.Visible = false;
@@ -346,8 +366,12 @@ namespace Retail.FinanceControls
 
         private void btnSure_Click(object sender, EventArgs e)
         {
+            switch (editType)
+            {
+                case EditTypeEnum.Add:
 
+                    break;
+            }
         }
-
     }
 }

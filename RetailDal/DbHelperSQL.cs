@@ -565,6 +565,113 @@ namespace Win.Soft.Retail.RetailDal
             }
         }
         /// <summary>
+        ///  执行多条SQL语句，实现数据库事务。
+        /// </summary>
+        /// <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        /// <returns>多条语句执行的返回值</returns>
+        public static List<object> ExecuteSqlTranWithIndentiy(Hashtable SQLStringList)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlTransaction trans = conn.BeginTransaction())
+                {
+                    List<object> results = new List<object>();
+                    SqlCommand cmd = new SqlCommand();
+                    try
+                    {
+                        int indentity = 0;
+                        //循环
+                        foreach (DictionaryEntry myDE in SQLStringList)
+                        {
+                            string cmdText = myDE.Key.ToString();
+                            SqlParameter[] cmdParms = (SqlParameter[])myDE.Value;
+                            foreach (SqlParameter q in cmdParms)
+                            {
+                                if (q.Direction == ParameterDirection.InputOutput)
+                                {
+                                    q.Value = indentity;
+                                }
+                            }
+                            PrepareCommand(cmd, conn, trans, cmdText, cmdParms);
+                            object val = cmd.ExecuteScalar();
+                            results.Add(val);
+                            foreach (SqlParameter q in cmdParms)
+                            {
+                                if (q.Direction == ParameterDirection.Output)
+                                {
+                                    indentity = Convert.ToInt32(q.Value);
+                                }
+                            }
+                            cmd.Parameters.Clear();
+                        }
+                        trans.Commit();
+                        return results;
+                    }
+                    catch
+                    {
+                        trans.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 事物执行更新主从表数据
+        /// </summary>
+        /// <param name="MasterSql">主表sql</param>  
+        /// <param name="MasterParms">主表参数</param>
+        /// <param name="SlaveSqlList">字表SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        /// <param name="EditType">更新类型</param>
+        /// <param name="ForeignKey">外键名称</param>
+        /// <param name="ForeignKeyValue">外键值，如果Add可不带该参数</param>
+        /// <returns></returns>
+        public static bool ExecuteSqlMasterSlave(string MasterSql, SqlParameter[] MasterParms, Hashtable SlaveSqlList, EditTypeEnum EditType, string ForeignKey, int ForeignKeyValue = 0)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlTransaction trans = conn.BeginTransaction())
+                {
+                    List<object> results = new List<object>();
+                    SqlCommand cmd = new SqlCommand();
+                    try
+                    {
+                        //更新主表
+                        PrepareCommand(cmd, conn, trans, MasterSql, MasterParms);
+                        object val = cmd.ExecuteScalar();
+                        if (EditType == EditTypeEnum.Add)
+                        {
+                            ForeignKeyValue = int.Parse(val.ToString());
+                        }
+                        cmd.Parameters.Clear();
+                        foreach (DictionaryEntry myDE in SlaveSqlList)
+                        {
+                            string cmdText = myDE.Key.ToString();
+                            SqlParameter[] cmdParms = (SqlParameter[])myDE.Value;
+                            foreach (SqlParameter q in cmdParms)
+                            {
+                                if (q.SourceColumn == ForeignKey)
+                                {
+                                    q.Value = ForeignKeyValue;
+                                }
+                            }
+                            PrepareCommand(cmd, conn, trans, cmdText, cmdParms);
+                            cmd.ExecuteScalar();
+                            cmd.Parameters.Clear();
+                        }
+                        trans.Commit();
+                        return true;
+                    }
+                    catch
+                    {
+                        trans.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+        /// <summary>
         /// 执行一条计算查询结果语句，返回查询结果（object）。
         /// </summary>
         /// <param name="SQLString">计算查询结果语句</param>
@@ -680,7 +787,7 @@ namespace Win.Soft.Retail.RetailDal
                     }
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }

@@ -78,7 +78,7 @@ namespace Retail.ProductControls
         /// <summary>
         /// 订单类型
         /// </summary>
-        private OrderType Type;
+        private OrderTypeEnum Type;
         /// <summary>
         /// 采购单明细
         /// </summary>
@@ -88,12 +88,12 @@ namespace Retail.ProductControls
         /// </summary>
         /// <param name="type"></param>
         /// <param name="OrderDetail"></param>
-        public void SetOrderDetail(OrderType type, object Order, object OrderDetail)
+        public void SetOrderDetail(OrderTypeEnum type, object Order, object OrderDetail)
         {
             Type = type;
             switch (type)
             {
-                case OrderType.Purchase:
+                case OrderTypeEnum.Purchase:
                     this.labOrderInfo.Text = "订单类型：采购单 订单号：" + ((Purchase)Order).Code;
                     ListPurchaseDetail = (BindingList<PurchaseDetail>)OrderDetail;
                     ProductItem Productitem;
@@ -349,7 +349,7 @@ namespace Retail.ProductControls
         {
             switch (Type)
             {
-                case OrderType.Purchase:
+                case OrderTypeEnum.Purchase:
                     PurchaseDetail item = ListPurchaseDetail.ToList<PurchaseDetail>().Find(i => i.ProductID == sender.ShowItem.ID);
                     if (item != null)
                     {

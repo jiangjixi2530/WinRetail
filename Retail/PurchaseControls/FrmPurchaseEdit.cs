@@ -56,7 +56,7 @@ namespace Retail.PurchaseControls
             this.cmbManufacturerID.SelectedValue = CurrentOrder.ManufacturerID;
             this.txtTelephone.Text = CurrentOrder.Telephone;
             this.txtRelation.Text = CurrentOrder.Relation;
-            this.txtCode.Text = CurrentOrder.Code == null ? SysHelper.GetAutoCode(AutoCodeType.Purchase) : CurrentOrder.Code;
+            this.txtCode.Text = CurrentOrder.Code == null ? SysHelper.GetAutoCode(AutoCodeTypeEnum.Purchase) : CurrentOrder.Code;
             this.txtPurchaseDate.Text = CurrentOrder.PurchaseDate.ToString("yyyy-MM-dd");
             this.txtReceiver.Text = CurrentOrder.Receiver;
             this.txtReceiverPhone.Text = CurrentOrder.ReceiverPhone;
@@ -228,7 +228,7 @@ namespace Retail.PurchaseControls
                 FrmProductSelect frmselect = new FrmProductSelect();
                 frmselect.StartPosition = FormStartPosition.Manual;
                 frmselect.Location = this.Location;
-                frmselect.SetOrderDetail(OrderType.Purchase, CurrentOrder, ListDetailSource);
+                frmselect.SetOrderDetail(OrderTypeEnum.Purchase, CurrentOrder, ListDetailSource);
                 frmselect.Size = this.Size;
                 this.Invoke((EventHandler)delegate
                 {

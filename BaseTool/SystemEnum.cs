@@ -6,9 +6,27 @@ using System.Text;
 namespace BaseTool
 {
     /// <summary>
-    /// 订单类型
+    /// 编辑类型
     /// </summary>
-    public enum OrderType
+    public enum EditTypeEnum
+    {
+        /// <summary>
+        /// 新增
+        /// </summary>
+        Add,
+        /// <summary>
+        /// 更新
+        /// </summary>
+        Update,
+        /// <summary>
+        /// 删除
+        /// </summary>
+        Delete,
+    }
+    /// <summary>
+    /// 订单类型枚举
+    /// </summary>
+    public enum OrderTypeEnum
     {
         /// <summary>
         /// 采购订单
@@ -20,7 +38,7 @@ namespace BaseTool
         Order,
     }
     /// <summary>
-    /// 分页类型
+    /// 分页类型枚举
     /// </summary>
     public enum PageMethodEnum
     {
@@ -38,9 +56,9 @@ namespace BaseTool
         Single,
     }
     /// <summary>
-    /// 编号自动生成的单据类型
+    /// 编号自动生成的单据类型枚举
     /// </summary>
-    public enum AutoCodeType
+    public enum AutoCodeTypeEnum
     {
         /// <summary>
         /// 采购单

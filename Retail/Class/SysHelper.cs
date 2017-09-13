@@ -51,6 +51,9 @@ namespace Retail
             //((BaseMain)Global.MainForm).ShadeShowDialog(FrmLoading.FrmLoad);
             FrmLoading.FrmLoad.ShowDialog(sender);
         }
+        /// <summary>
+        /// 关闭加载框
+        /// </summary>
         public static void CloseLoading()
         {
             try
@@ -67,7 +70,7 @@ namespace Retail
         /// </summary>
         /// <param name="codeType">单据类型</param>
         /// <returns></returns>
-        public static string GetAutoCode(AutoCodeType codeType)
+        public static string GetAutoCode(AutoCodeTypeEnum codeType)
         {
             SysAutoCodeDal dal = new SysAutoCodeDal();
             SysAutoCode AutoCodeSet = dal.GetModel(codeType.ToString());
