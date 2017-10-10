@@ -1,13 +1,9 @@
 ﻿using BaseTool;
-using Retail.Class;
 using Retail.ProductControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Win.Soft.Retail.RetailDal;
@@ -56,7 +52,7 @@ namespace Retail.PurchaseControls
             this.cmbManufacturerID.SelectedValue = CurrentOrder.ManufacturerID;
             this.txtTelephone.Text = CurrentOrder.Telephone;
             this.txtRelation.Text = CurrentOrder.Relation;
-            this.txtCode.Text = CurrentOrder.Code == null ? SysHelper.GetAutoCode(AutoCodeTypeEnum.Purchase) : CurrentOrder.Code;
+            this.txtCode.Text = CurrentOrder.Code ?? SysHelper.GetAutoCode(AutoCodeTypeEnum.Purchase);
             this.txtPurchaseDate.Text = CurrentOrder.PurchaseDate.ToString("yyyy-MM-dd");
             this.txtReceiver.Text = CurrentOrder.Receiver;
             this.txtReceiverPhone.Text = CurrentOrder.ReceiverPhone;

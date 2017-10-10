@@ -1,12 +1,9 @@
 ﻿using BaseTool;
-using Retail.Class;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Win.Soft.Retail.RetailDal;
 using Win.Soft.Retail.RetailModel;

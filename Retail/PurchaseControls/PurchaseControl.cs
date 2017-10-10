@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Win.Soft.Retail.RetailDal;
 using Win.Soft.Retail.RetailModel;
 using System.Threading;
-using Retail.Controls;
 using BaseTool;
 namespace Retail.PurchaseControls
 {

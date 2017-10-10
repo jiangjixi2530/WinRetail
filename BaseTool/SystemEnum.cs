@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BaseTool
+﻿namespace BaseTool
 {
     /// <summary>
     /// 编辑类型

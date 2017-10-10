@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Retail.Controls;
 using System.Windows.Forms;
 using BaseTool;
 using Win.Soft.Retail.RetailDal;
 using Win.Soft.Retail.RetailModel;
-using System.Threading;
 
 namespace Retail
 {
